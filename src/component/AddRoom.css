@@ -1,0 +1,42 @@
+@media screen and (max-width: 435px) {
+    .login-top{
+     background-color: #3052ac;
+     height: 23vh;
+     border-bottom-left-radius: 2rem;
+     border-bottom-right-radius: 2rem;
+    }
+    .login-text{
+     color: azure;
+     font-size: 27px;
+     padding: 5px;
+     margin-left: 2rem;
+    }
+    .add-room{
+        display: flex;
+        align-items: center;
+        border: none;
+        width: 86vw;
+        margin: 5vh 6vw;
+        height: 10vh;
+        border-radius: 15px;
+        background-color: transparent;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .plus{
+        margin-left: 7vw;
+        padding-top: 6px;
+        color: #3052ac;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .plus span{
+        font-weight: 600;
+    }
+    .text{
+        margin-left: 6vw;
+        font-weight: 600;
+    }
+    .alert{
+        width: 95vw;
+    }
+}

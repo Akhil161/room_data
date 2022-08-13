@@ -1,0 +1,45 @@
+@media screen and (max-width: 435px) {
+   .login-top{
+    background-color: #3052ac;
+    height: 23vh;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+   }
+   .login-text{
+    color: azure;
+    font-size: 27px;
+    padding: 5px;
+    margin-left: 2rem;
+   }
+   .input-w{
+    width: 80%;
+    margin: 0 10%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 5px;
+   }
+   .user-input{
+    color: black;
+    border-left: none;
+    outline-style: none;
+   }
+   .icon-user{
+    color: #3052ac;
+    background-color: transparent;
+    
+   }
+   .next-btn{
+    width: 80%;
+    margin: 0 10%;
+    
+   }
+   .next-btn button{
+    border-radius: 3rem;
+    background-color:#3052ac;
+    height: 40px;
+    border: none;
+   }
+}
+.link{
+    text-decoration: none;
+    color: white;
+}

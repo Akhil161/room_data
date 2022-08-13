@@ -1,0 +1,42 @@
+@media screen and (max-width: 435px) {
+
+.sub-top{
+    background-color: #3052ac;
+    height: 23vh;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+.sub-text{
+    color: azure;
+    font-size: 27px;
+    padding: 5px;
+    margin-left: 3%;
+
+}
+.pack-caontainer{
+    width: 70vw;
+    margin: 5vh 15vw;
+    padding: 15px 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 15px;
+}
+.pack-caontainer p{
+    margin-bottom: 5px;
+    font-size: small;
+}
+.pack-caontainer button{
+    width: 97%;
+    background-color: #eaeef6;
+    border-radius: 15px;
+    color: #3052ac;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 2%;
+    border: none;
+    height: 28px;
+}
+.pack-inner{
+    padding: 0 8px;
+    margin-left:4% ;
+}
+}
