@@ -11,7 +11,7 @@ export default function AddRoom() {
   let [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const { width } = useWindowDimensions();
+  const {height, width } = useWindowDimensions();
 
   return (
     <div>
@@ -41,6 +41,11 @@ export default function AddRoom() {
           BackdropComponent={Backdrop}
           BackdropProps={{
             timeout: 500,
+          }} 
+          className="model"
+          sx={{
+            
+            overflowY:"auto",
           }}
         >
           <Fade in={open}>
@@ -53,9 +58,9 @@ export default function AddRoom() {
                 transform: "translate(-50%, -50%)",
                 width: width,
                 bgcolor: "background.paper",
-                
+                Height:"auto",
                 boxShadow: 24,
-                height: 400,
+                
                 borderTopLeftRadius: "2rem",
                 borderTopRightRadius: "2rem",
                 p: 4,

@@ -7,7 +7,7 @@
     justify-content: space-between;
     height: 2rem;
     border-radius:7px;
-    margin-top: 0.5rem;
+    margin: 15px;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -24,4 +24,5 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-size: 15px;
 }
+
 }

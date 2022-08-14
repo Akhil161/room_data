@@ -9,9 +9,11 @@
     width: 0;
    }
    .room-name-btn{
-    min-width: 35vw;
+    min-width: 32vw;
+    min-height: -webkit-fill-available;
     margin-right: 5vw ;
     border-radius:15px ;
+    font-size: 12px;
     background-color: white;
    }
    .input-roomName{
@@ -21,4 +23,52 @@
     width: 35vw;
     outline: none;
    }
+   .switchBoard-container{
+    overflow-y: auto;
+    max-height: 25vh;
+   }
+   .room-add-switchBoard{
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 7px;
+    width: 90%;
+    margin: 0 5%;
+    font-size: 15px;
+    padding: 2px;
+    font-weight: 400;
+   }
+   .room-add-switchBoard-icon{
+    margin-left: 3%;
+    margin-top: 0.3rem;
+   }
+   .room-add-switchBoard-title{
+    margin-left: 10%;
+   }
+   .room-details-bottom-cont{
+    color: aliceblue;
+    width: 90%;
+    margin: 1.5rem 5%;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+
+   }
+   .room-details-bottom-top{
+    font-size: 10px;
+    background-color: #072370;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding-left: 3%;
+   }
+   .room-details-bottom-botCon{
+    background-color: #3052ac;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    justify-content: space-between;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+   }
+   
 }

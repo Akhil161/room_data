@@ -11,6 +11,9 @@
      padding: 5px;
      margin-left: 2rem;
     }
+    .model::-webkit-scrollbar{
+       width: 0;
+    }
     .add-room{
         display: flex;
         align-items: center;

@@ -3,6 +3,20 @@ import React, { useState } from "react";
 import "./RoomDetails.css";
 import SwitchBoard from "./SwitchBoard";
 export default function RoomDetails() {
+    let [count,setCount] = useState(1)
+    let [arr,setArr]=useState([])
+
+    function handleSwitch(){
+        console.log("hi");
+        setCount(count+1);
+         let  newArray = [];
+            newArray[count - 1] = 2;
+            newArray.fill(2);
+            setArr(newArray)
+            console.log(newArray.length);
+       
+    }
+    
   let [roomName, setRoomName] = useState([
     {
       name: "Living Room",
@@ -78,7 +92,60 @@ export default function RoomDetails() {
           />
         </Popover>
       </div>
-      <SwitchBoard/>
+      {
+         arr.length!==0?
+         arr.map((e,i)=>{
+         return   <SwitchBoard SwitchBoard={i}/>
+         }):null
+      }
+
+      <div  onClick={handleSwitch} className="room-add-switchBoard">
+        <div className="room-add-switchBoard-icon">
+          <span class="material-icons">add</span>
+        </div>
+        <div className="room-add-switchBoard-title">Add SwitchBoard</div>
+      </div>
+      <div className="room-details-bottom-cont">
+        <div className="room-details-bottom-top">
+          2000 will be charged as One Time Security at checkout
+        </div>
+        <div className="room-details-bottom-botCon">
+          <div className="room-details-bottom-currncy">
+            <div
+              style={{
+                display: "flex",
+              }}
+            >
+              <span className="material-icons" style={{}}>
+                currency_rupee
+              </span>
+              <span
+                style={{
+                  fontStretch: "condensed",
+                  fontSize: "22px",
+                  marginTop: "-0.4rem",
+                }}
+              >
+                150
+              </span>
+            </div>
+            <div
+              style={{
+                fontSize: "8px",
+              }}
+            >
+              Monthly Subscription Fee
+            </div>
+          </div>
+          <div
+            style={{
+              fontSize: "1.6rem",
+            }}
+          >
+            Next
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
