@@ -36,9 +36,9 @@ export default function Login() {
         />
       </div>
       <div className="d-grid gap-2 d-md-block next-btn mt-4" >
-        <button className="" type="button">
-          <Link to="plan" className="link"> Next</Link>
-        </button>
+      <Link to="plan" className="link"><button style={{width:"100%"}} type="button">
+           Next
+        </button></Link>
       </div>
     </div>
   );

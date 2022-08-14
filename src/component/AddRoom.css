@@ -39,4 +39,13 @@
     .alert{
         width: 95vw;
     }
+    .add-room-title{
+      font-weight: bolder;  
+      font-size: 22px;
+    }
+    .add-room-subtitle{
+        font-weight: 400;
+        font-size: small;
+        line-height: 1rem;
+    }
 }

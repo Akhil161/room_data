@@ -1,0 +1,24 @@
+@media screen and (max-width: 435px) {
+   .room-name-cont{
+    display: flex;
+    
+    
+    overflow-x: auto;
+   }
+   .room-name-cont::-webkit-scrollbar{
+    width: 0;
+   }
+   .room-name-btn{
+    min-width: 35vw;
+    margin-right: 5vw ;
+    border-radius:15px ;
+    background-color: white;
+   }
+   .input-roomName{
+    border: none;
+    border-radius: 30px;
+    padding-left: 15px;
+    width: 35vw;
+    outline: none;
+   }
+}
