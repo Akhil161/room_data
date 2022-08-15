@@ -17,7 +17,7 @@ export default function AddRoom() {
     <div>
       <div className="login-top">
         <p className="login-text">
-          {" "}
+          
           <strong>Add the rooms</strong>
           <br />
           in your home
@@ -44,7 +44,7 @@ export default function AddRoom() {
           }} 
           className="model"
           sx={{
-            
+            height:"100%",
             overflowY:"auto",
           }}
         >
@@ -58,7 +58,7 @@ export default function AddRoom() {
                 transform: "translate(-50%, -50%)",
                 width: width,
                 bgcolor: "background.paper",
-                Height:"auto",
+                
                 boxShadow: 24,
                 
                 borderTopLeftRadius: "2rem",

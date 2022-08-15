@@ -5,6 +5,9 @@
     
     overflow-x: auto;
    }
+   .background-blue{
+      border-color: #3052ac;
+   }
    .room-name-cont::-webkit-scrollbar{
     width: 0;
    }

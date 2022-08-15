@@ -1,22 +1,70 @@
 import { Popover } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./RoomDetails.css";
 import SwitchBoard from "./SwitchBoard";
 export default function RoomDetails() {
-    let [count,setCount] = useState(1)
-    let [arr,setArr]=useState([])
+  let [count, setCount] = useState(1);
+  let [arr, setArr] = useState([]);
+  let [data, setdata] = useState([
+    { roomname: "Living Room", roomId: 0, switchBoards: [] },
+  ]);
+  let [selectTab, setSelectTab] = useState("Living Room");
+  let [filterRoom, setFilterRoom] = useState([]);
+  const [addSwitch, setAddSwitch] = useState(false);
 
-    function handleSwitch(){
-        console.log("hi");
-        setCount(count+1);
-         let  newArray = [];
-            newArray[count - 1] = 2;
-            newArray.fill(2);
-            setArr(newArray)
-            console.log(newArray.length);
-       
+  console.log("At  ",data);
+  console.log(selectTab);
+  function handleSwitch() {
+    let roomNamme = [...data].filter((e) => {
+      return e.roomname == selectTab;
+    });
+    let roomNamme1 = [...data].filter((e) => {
+      return e.roomname != selectTab;
+    });
+
+    console.log("roomNamme", roomNamme);
+    if (roomNamme[0]) {
+      console.log(roomNamme);
+      roomNamme[0].switchBoards = [
+        ...roomNamme[0].switchBoards,
+        {
+          switchboardNumber: roomNamme[0].switchBoards.length + 1,
+          appliances: {
+            fans: 0,
+            lightLoad: 0,
+            heavyLoad: 0,
+          },
+        },
+      ];
+      setdata([...roomNamme1, ...roomNamme]);
+      console.log("roomName1    ",data);
+    } else {
+      console.log("before", data);
+      let newData = [
+        ...data,
+        {
+          roomname: selectTab,
+          roomId: data.length,
+          switchBoards: [
+            {
+              switchboardNumber: 1,
+              appliances: {
+                fans: 0,
+                lightLoad: 0,
+                heavyLoad: 0,
+              },
+            },
+          ],
+        },
+      ];
+      console.log("after", newData);
+      setdata(newData);
     }
-    
+
+    setAddSwitch(!addSwitch);
+    console.log("setaddswitch    ",data);
+  }
+
   let [roomName, setRoomName] = useState([
     {
       name: "Living Room",
@@ -51,7 +99,36 @@ export default function RoomDetails() {
           ? roomName.map((e, i) => {
               return (
                 <div>
-                  <button className="room-name-btn" key={i}>
+                  <button
+                    onClick={() => {
+                      let btn = document.querySelectorAll(".room-name-btn");
+                      console.log(btn);
+                      btn.forEach((ele) => {
+                        ele.classList.remove("background-blue");
+                      });
+                      btn[i].classList.add("background-blue");
+
+                      // let newData = data;
+                      // newData = newData.filter((e) => {
+                      //   return e.roomId === i;
+                      // });
+
+                      // setdata(
+                      //   newData.length > 0
+                      //     ? data
+                      //     : [
+                      //         ...data,
+                      //         { roomname: e.name, roomId: i, switchBoards: [] },
+                      //       ]
+                      // );
+                      setSelectTab(e.name);
+                      setAddSwitch(!addSwitch);
+                    }}
+                    className={`room-name-btn ${
+                      e.name == "Living Room" ? "background-blue" : ""
+                    }`}
+                    key={i}
+                  >
                     {e.name}
                   </button>
                 </div>
@@ -92,14 +169,27 @@ export default function RoomDetails() {
           />
         </Popover>
       </div>
-      {
-         arr.length!==0?
-         arr.map((e,i)=>{
-         return   <SwitchBoard SwitchBoard={i}/>
-         }):null
-      }
+      {data?.find((d) => {
+        console.log(d.roomname);
+        return d.roomname === selectTab;
+      })?.switchBoards.length !== 0
+        ? data
+            ?.find((d) => {
+              return d.roomname === selectTab;
+            })
+            ?.switchBoards.map((e, i) => {
+              return (
+                <SwitchBoard
+                  SwitchBoard={i}
+                  data={data}
+                  setData={setdata}
+                  selectTab={selectTab}
+                />
+              );
+            })
+        : null}
 
-      <div  onClick={handleSwitch} className="room-add-switchBoard">
+      <div onClick={handleSwitch} className="room-add-switchBoard">
         <div className="room-add-switchBoard-icon">
           <span class="material-icons">add</span>
         </div>
