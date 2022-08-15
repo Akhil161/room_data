@@ -6,6 +6,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import { useWindowDimensions } from "./window/Resize";
 import RoomDetails from "./RoomDetails";
+import { calculateNewValue } from "@testing-library/user-event/dist/utils";
 
 export default function AddRoom() {
   let [open, setOpen] = useState(false);
@@ -44,8 +45,9 @@ export default function AddRoom() {
           }} 
           className="model"
           sx={{
-            height:"100%",
-            overflowY:"auto",
+            
+            marginTop:"50%",
+            scrollbar:"auto",
           }}
         >
           <Fade in={open}>
@@ -54,7 +56,8 @@ export default function AddRoom() {
                 position: "absolute",
                 top: "50%",
                 left: "50%",
-                marginTop: "28vh",
+                height:"100%",
+                overflowY:"auto",
                 transform: "translate(-50%, -50%)",
                 width: width,
                 bgcolor: "background.paper",

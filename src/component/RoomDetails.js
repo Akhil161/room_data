@@ -6,13 +6,26 @@ export default function RoomDetails() {
   let [count, setCount] = useState(1);
   let [arr, setArr] = useState([]);
   let [data, setdata] = useState([
-    { roomname: "Living Room", roomId: 0, switchBoards: [] },
+    {
+      roomname: "Living Room",
+      roomId: 0,
+      switchBoards: [
+        {
+          switchboardNumber: 1,
+          appliances: {
+            fans: 0,
+            lightLoad: 0,
+            heavyLoad: 0,
+          },
+        },
+      ],
+    },
   ]);
   let [selectTab, setSelectTab] = useState("Living Room");
   let [filterRoom, setFilterRoom] = useState([]);
   const [addSwitch, setAddSwitch] = useState(false);
 
-  console.log("At  ",data);
+  console.log("At  ", data);
   console.log(selectTab);
   function handleSwitch() {
     let roomNamme = [...data].filter((e) => {
@@ -37,7 +50,7 @@ export default function RoomDetails() {
         },
       ];
       setdata([...roomNamme1, ...roomNamme]);
-      console.log("roomName1    ",data);
+      console.log("roomName1    ", data);
     } else {
       console.log("before", data);
       let newData = [
@@ -62,7 +75,7 @@ export default function RoomDetails() {
     }
 
     setAddSwitch(!addSwitch);
-    console.log("setaddswitch    ",data);
+    console.log("setaddswitch    ", data);
   }
 
   let [roomName, setRoomName] = useState([
