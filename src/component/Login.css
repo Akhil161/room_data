@@ -1,15 +1,22 @@
 @media screen and (max-width: 435px) {
    .login-top{
-    background-color: #3052ac;
+    background-color: #2552B2;
     height: 23vh;
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
+    
    }
    .login-text{
     color: azure;
-    font-size: 27px;
+    /* font-size: 27px;
     padding: 5px;
-    margin-left: 2rem;
+    margin-left: 2rem; */
+    font-style: normal;
+font-weight: 400;
+font-size: 36px;
+
+
+color: #FFFFFF;
    }
    .input-w{
     width: 80%;
@@ -27,6 +34,14 @@
     background-color: transparent;
     
    }
+   .login-useicon{
+    height: 18.985885px;
+width: 16.193748474121094px;
+left: 52px;
+top: 218.36114501953125px;
+border-radius: 0px;
+
+   }
    .next-btn{
     width: 80%;
     margin: 0 10%;
@@ -34,9 +49,12 @@
    }
    .next-btn button{
     border-radius: 3rem;
-    background-color:#3052ac;
+    
     height: 40px;
     border: none;
+    background: #2552B2;
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+border-radius: 40px;
    }
 }
 .link{

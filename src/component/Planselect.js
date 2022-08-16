@@ -33,7 +33,7 @@ export default function Planselect() {
                       <span
                         className="material-icons"
                         style={{
-                          color: "#3052ac",
+                          color: "#3052AC",
                           fontSize: "34px",
                           fontWeight: "600",
                         }}
@@ -43,9 +43,10 @@ export default function Planselect() {
                     </div>
                     <div
                       style={{
-                        color: "#3052ac",
-                        fontSize: "34px",
-                        fontWeight: "600",
+                        color: "#3052AC",
+                        fontSize: "55px",
+                        fontWeight: "700",
+                        lineHeight: "75px",
                       }}
                     >
                       {e.rs}

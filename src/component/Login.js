@@ -13,7 +13,7 @@ export default function Login() {
 
       <div className="input-group mb-3 mt-3 input-w">
         <span className="input-group-text icon-user" id="basic-addon1">
-          <span class="material-icons">person</span>
+          <img className="login-useicon" src={process.env.PUBLIC_URL+"assets/icon/Group 5.png"}/>
         </span>
         <input
           type="text"
@@ -25,7 +25,7 @@ export default function Login() {
       </div>
       <div className="input-group mb-3 mt-3 input-w">
         <span className="input-group-text icon-user" id="basic-addon1">
-          <span class="material-icons">phone_in_talk</span>
+        <img className="login-useicon" src={process.env.PUBLIC_URL+"assets/icon/Group 4.png"}/>
         </span>
         <input
           type="text"

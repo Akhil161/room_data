@@ -2,6 +2,11 @@ body, #root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #FFFFFF;
+  @font-face {
+    font-family: "ManropeRegular";
+    src: local(ManropeRegular),url("./font/static/Manrope-Regular.ttf") format("truetype");
+  }
 }
 
 

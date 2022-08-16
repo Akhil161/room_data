@@ -6,7 +6,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import { useWindowDimensions } from "./window/Resize";
 import RoomDetails from "./RoomDetails";
-import { calculateNewValue } from "@testing-library/user-event/dist/utils";
+
 
 export default function AddRoom() {
   let [open, setOpen] = useState(false);

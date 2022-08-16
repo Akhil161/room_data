@@ -1,0 +1,195 @@
+@media screen and (max-width: 400px) {
+  .addRoom-d-c {
+    
+    width: 100vw;
+    height: 844px;
+    left: 727px;
+    top: -423px;
+    border-radius: 0px;
+    background: #ffffff;
+  }
+  .addRoom-title-cont {
+    position: absolute;
+    width: 100vw;
+    height: 172px;
+    left: 0px;
+    top: 0px;
+
+    background: #3052ac;
+    border-radius: 0px 0px 31px 31px;
+  }
+  .addRoom-title-inner {
+    position: absolute;
+    width: 338px;
+    height: 98px;
+    left: 33px;
+    top: 47px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 49px;
+
+    color: #ffffff;
+  }
+  .addRoom-room-detail {
+    position: relative;
+    width: 345px;
+    height: 73px;
+    left: 23px;
+    top: 190px;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    margin-bottom: 4%;
+  }
+  .addroom-lamp-icon{
+    position: absolute;
+    height: 35.954887px;
+    width: 24.976519px;
+    
+    border-radius: 0px;
+    left: 8.07%;
+    right: 0.05%;
+    top: 29%;
+    bottom: 0.15%;
+
+  }
+  .addroom-room-name{
+    position: absolute;
+    width: fit-content;
+    height: 23px;
+    left: 22%;
+    top: 18.5%;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .addroom-room-details1{
+    position: absolute;
+    width: fit-content;
+    height: 14px;
+    left: 22%;
+    top: 60%;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14px;
+    color: #747474;    
+  }
+  .addroom-room-currenyM{
+    position: absolute;
+    width: fit-content;
+    height: 22px;
+    left: 79%;
+    top: 33%;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 27px;
+    color: #000000;
+  }
+  
+  .addroom-bottom-container{
+    position: relative;
+    width: 345px;
+    height: 76px;
+    left: 5.5%;
+    top: 64%;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.3));
+  }
+  .addroom-bottom-upper-cont{
+    position: absolute;
+    width: -webkit-fill-available;
+    height: 18px;
+    left: 6%;
+    top: 20%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+  }
+  .addroom-bottom-upper1-cont{
+    position: absolute;
+    width: 345px;
+    height: 28px;
+    top: 0px;
+    background: #072370;
+    border-radius: 10px 10px 0px 0px;
+}
+.addroom-bottom-upper2-cont{
+position: absolute;
+width: 345px;
+height: 48px;
+left: 0;
+top: 37%;
+
+background: #3052AC;
+border-radius: 0px 0px 10px 10px;
+}
+.addroom-bottom-upper2-cont .cuurr{
+    position: absolute;
+    left: 10%;
+
+    right: 75.38%;
+    top: 10.17%;
+
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+.addroom-bottom-upper2-cont .sub{
+    position: absolute;
+    left: 10%;
+    right: 64.36%;
+    top: 68.77%;
+    bottom: 5.69%;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 11px;
+    color: #FFFFFF;
+}
+.addroom-bottom-upper2-cont .next{
+    position: absolute;
+    width: 43px;
+    height: 21px;
+    left: 76%;
+    top: 21%;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 29px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+.addroom-plus-icon{
+  position: absolute;
+  left: 6.27%;
+  
+  top: 19.18%;
+  bottom: 3.18%;
+  height: 53%;
+
+}
+.addroom-add-room-name{
+  position: absolute;
+    width: 99px;
+    height: 23px;
+    left: 29%;
+    top: 32%;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 23px;
+    color: #000000;
+}
+}

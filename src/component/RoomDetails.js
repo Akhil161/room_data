@@ -2,6 +2,10 @@ import { Popover } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "./RoomDetails.css";
 import SwitchBoard from "./SwitchBoard";
+import {useDispatch} from 'react-redux'
+import { saveData } from "../redux/Action";
+import { Link } from "react-router-dom";
+
 export default function RoomDetails() {
   let [count, setCount] = useState(1);
   let [arr, setArr] = useState([]);
@@ -24,6 +28,10 @@ export default function RoomDetails() {
   let [selectTab, setSelectTab] = useState("Living Room");
   let [filterRoom, setFilterRoom] = useState([]);
   const [addSwitch, setAddSwitch] = useState(false);
+
+  // Redux
+  let dispatch = useDispatch();
+  
 
   console.log("At  ", data);
   console.log(selectTab);
@@ -208,18 +216,26 @@ export default function RoomDetails() {
         </div>
         <div className="room-add-switchBoard-title">Add SwitchBoard</div>
       </div>
-      <div className="room-details-bottom-cont">
+      <div  className="room-details-bottom-cont" onClick={() => {
+              
+              dispatch(saveData({data}));
+              // console.log("Final Data",dataState );
+
+            }}>
         <div className="room-details-bottom-top">
           2000 will be charged as One Time Security at checkout
         </div>
+        <Link to="room" style={{textDecoration: "none",color:"white"}}>
         <div className="room-details-bottom-botCon">
-          <div className="room-details-bottom-currncy">
+          
+            <div className="room-details-bottom-currncy">
             <div
               style={{
                 display: "flex",
+                
               }}
             >
-              <span className="material-icons" style={{}}>
+              <span className="material-icons" >
                 currency_rupee
               </span>
               <span
@@ -227,6 +243,7 @@ export default function RoomDetails() {
                   fontStretch: "condensed",
                   fontSize: "22px",
                   marginTop: "-0.4rem",
+                  textDecoration: "none",
                 }}
               >
                 150
@@ -240,6 +257,7 @@ export default function RoomDetails() {
               Monthly Subscription Fee
             </div>
           </div>
+          
           <div
             style={{
               fontSize: "1.6rem",
@@ -248,6 +266,7 @@ export default function RoomDetails() {
             Next
           </div>
         </div>
+        </Link>
       </div>
     </div>
   );
