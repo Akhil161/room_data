@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux'
 import { saveData } from "../redux/Action";
 import { Link } from "react-router-dom";
 
-export default function RoomDetails() {
+export default function RoomDetails({handleCloseModel}) {
   let [count, setCount] = useState(1);
   let [arr, setArr] = useState([]);
   let [data, setdata] = useState([
@@ -217,15 +217,16 @@ export default function RoomDetails() {
         </div>
         <div className="room-add-switchBoard-title">Add SwitchBoard</div>
       </div>
-      {/*
-      <div  className="room-details-bottom-cont" onClick={() => {
-              
-              dispatch(saveData({data}));
+      
+      <div  className="room-details-bottom-cont" onClick={()=>{
+        handleCloseModel()
+           console.log("hijhg");      
+              // dispatch(saveData({data}));
               // console.log("Final Data",dataState );
 
-            }}>
-        <div className="room-details-bottom-top">
-          2000 will be charged as One Time Security at checkout
+      }}>
+        {/* <div className="room-details-bottom-top">
+        ₹ 2000 will be charged as One Time Security at checkout
         </div>
          <Link to="room" style={{textDecoration: "none",color:"white"}}>
         <div className="room-details-bottom-botCon">
@@ -268,8 +269,16 @@ export default function RoomDetails() {
             Next
           </div>
         </div>
-        </Link>
-      </div> */}
+        </Link> */}
+         <div className='addroom-bottom-upper1-cont'><span className='addroom-bottom-upper-cont'>₹ 2000 will be charged as One Time Security at checkout</span></div>
+        <div className='addroom-bottom-upper2-cont'onClick={()=>{
+        
+           console.log("hijhg");      }}>
+          <span className='cuurr'>₹ 150</span>
+          <span className='sub'>Monthly Subscription Fee</span>
+          <span className='next'>Next</span>
+        </div>
+      </div> 
     </div>
   );
 }

@@ -5,6 +5,7 @@
     top: 14%;
     left: 7%;
     overflow-x: auto;
+    width: 339px;
    }
    .background-blue{
       border-color: #3052ac;
@@ -72,20 +73,30 @@ color: #000000;
     
    }
    .room-details-bottom-cont{
-    color: aliceblue;
-    width: 90%;
-    margin: 1.5rem 5%;
-    border-radius: 7px;
-    display: flex;
-    flex-direction: column;
-
+      color: aliceblue;
+      
+      margin: 1.5rem 5%;
+      border-radius: 7px;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 345px;
+      height: 76px;
+      left: 3%;
+      top: 76%;
+      filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.3));
    }
    .room-details-bottom-top{
-    font-size: 10px;
-    background-color: #072370;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    padding-left: 3%;
+      background-color: #072370;
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+      padding-left: 3%;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      color: #FFFFFF;
+      height: 24%;
    }
    .room-details-bottom-botCon{
     background-color: #3052ac;

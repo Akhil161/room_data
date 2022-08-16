@@ -75,7 +75,7 @@ export default function AddRoom() {
                 control
               </p>
               <div className="room-name">
-                <RoomDetails />
+                <RoomDetails handleCloseModel={handleClose()}/>
               </div>
             </Box>
           </Fade>
