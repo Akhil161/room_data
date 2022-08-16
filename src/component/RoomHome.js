@@ -78,31 +78,41 @@ const {height, width } = useWindowDimensions();
           className="model"
           sx={{
             
-            marginTop:"50%",
+            
             scrollbar:"auto",
           }}
         >
           <Fade in={open}>
             <Box
               sx={{
+                // position: "absolute",
+                // top: "50%",
+                // left: "50%",
+                // height:"100%",
+                // overflowY:"auto",
+                // transform: "translate(-50%, -50%)",
+                // width: width,
+                // bgcolor: "background.paper",
+                
+                // boxShadow: 24,
+                
+                // borderTopLeftRadius: "2rem",
+                // borderTopRightRadius: "2rem",
+                // p: 4,
+
                 position: "absolute",
-                top: "50%",
-                left: "50%",
-                height:"100%",
-                overflowY:"auto",
-                transform: "translate(-50%, -50%)",
-                width: width,
-                bgcolor: "background.paper",
-                
-                boxShadow: 24,
-                
-                borderTopLeftRadius: "2rem",
-                borderTopRightRadius: "2rem",
-                p: 4,
+                width: "390px",
+                height: "605px",
+                left: "0px",
+                top: "239px",
+
+                background: "#FFFFFF",
+                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                borderRadius: "29px 29px 0px 0px",
               }}
             >
-              <div className="add-room-title">Add Room Details</div>
-              <p className="add-room-subtitle">
+              <div className="add-room-titl">Add Room Details</div>
+              <p className="add-room-subtitl">
                 Add the rooms, and the switchboards in it & the appliances they
                 control
               </p>

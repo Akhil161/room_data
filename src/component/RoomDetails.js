@@ -190,6 +190,7 @@ export default function RoomDetails() {
           />
         </Popover>
       </div>
+      <div className="SwitchBoard-container">
       {data?.find((d) => {
         console.log(d.roomname);
         return d.roomname === selectTab;
@@ -209,13 +210,14 @@ export default function RoomDetails() {
               );
             })
         : null}
-
+</div>
       <div onClick={handleSwitch} className="room-add-switchBoard">
         <div className="room-add-switchBoard-icon">
           <span class="material-icons">add</span>
         </div>
         <div className="room-add-switchBoard-title">Add SwitchBoard</div>
       </div>
+      {/*
       <div  className="room-details-bottom-cont" onClick={() => {
               
               dispatch(saveData({data}));
@@ -225,7 +227,7 @@ export default function RoomDetails() {
         <div className="room-details-bottom-top">
           2000 will be charged as One Time Security at checkout
         </div>
-        <Link to="room" style={{textDecoration: "none",color:"white"}}>
+         <Link to="room" style={{textDecoration: "none",color:"white"}}>
         <div className="room-details-bottom-botCon">
           
             <div className="room-details-bottom-currncy">
@@ -267,7 +269,7 @@ export default function RoomDetails() {
           </div>
         </div>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

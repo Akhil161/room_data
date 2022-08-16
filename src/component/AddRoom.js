@@ -45,7 +45,7 @@ export default function AddRoom() {
           }} 
           className="model"
           sx={{
-            
+            height:"25%",
             marginTop:"50%",
             scrollbar:"auto",
           }}

@@ -38,7 +38,7 @@ export default function SwitchBoard(props) {
   }, [light, fan, ac]);
 
   return (
-    <div>
+    <div >
       <div>SwitchBoard {SwitchBoard + 1}</div>
       <div className="room-appliance-count">
         <div
