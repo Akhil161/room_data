@@ -128,7 +128,7 @@ const {height, width } = useWindowDimensions();
         <div className='addroom-bottom-upper1-cont'><span className='addroom-bottom-upper-cont'>₹ 4000 will be charged as One Time Security at checkout</span></div>
         <div className='addroom-bottom-upper2-cont'>
           <span className='cuurr'>₹ 300</span>
-          <span className='sub'>Monthly Subscription Fee</span>
+          <span className='sub '>Monthly Subscription Fee</span>
           <span className='next'>Next</span>
         </div>
         </Link>

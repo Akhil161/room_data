@@ -6,7 +6,8 @@ import {useDispatch} from 'react-redux'
 import { saveData } from "../redux/Action";
 import { Link } from "react-router-dom";
 
-export default function RoomDetails({handleCloseModel}) {
+export default function RoomDetails(props) {
+  const {onClose}=props
   let [count, setCount] = useState(1);
   let [arr, setArr] = useState([]);
   let [data, setdata] = useState([
@@ -218,13 +219,7 @@ export default function RoomDetails({handleCloseModel}) {
         <div className="room-add-switchBoard-title">Add SwitchBoard</div>
       </div>
       
-      <div  className="room-details-bottom-cont" onClick={()=>{
-        handleCloseModel()
-           console.log("hijhg");      
-              // dispatch(saveData({data}));
-              // console.log("Final Data",dataState );
-
-      }}>
+      <div  className="room-details-bottom-cont" >
         {/* <div className="room-details-bottom-top">
         ₹ 2000 will be charged as One Time Security at checkout
         </div>
@@ -270,12 +265,16 @@ export default function RoomDetails({handleCloseModel}) {
           </div>
         </div>
         </Link> */}
-         <div className='addroom-bottom-upper1-cont'><span className='addroom-bottom-upper-cont'>₹ 2000 will be charged as One Time Security at checkout</span></div>
-        <div className='addroom-bottom-upper2-cont'onClick={()=>{
-        
-           console.log("hijhg");      }}>
+         <div className='addroom-bottom-upper1-cont'><span className='addroom-bottom-upper-cont fontSize'>₹ 2000 will be charged as One Time Security at checkout</span></div>
+        <div className='addroom-bottom-upper2-cont' onClick={()=>{onClose()}
+           
+          // console.log("hijhg");      
+              // dispatch(saveData({data}));
+              // console.log("Final Data",dataState );
+
+      }>
           <span className='cuurr'>₹ 150</span>
-          <span className='sub'>Monthly Subscription Fee</span>
+          <span className='sub sizefont'>Monthly Subscription Fee</span>
           <span className='next'>Next</span>
         </div>
       </div> 
