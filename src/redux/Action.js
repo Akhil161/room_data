@@ -1,6 +1,9 @@
+import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons"
+
 export const saveData = (data) => {
+ console.log(data)
     return {
              type:"save",
-             payload:data,
+             payload:data[0],
          }
  }

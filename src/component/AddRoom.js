@@ -13,7 +13,7 @@ export default function AddRoom() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const {height, width } = useWindowDimensions();
-
+  console.log(open);
   return (
     <div>
       <div className="login-top">
@@ -37,7 +37,7 @@ export default function AddRoom() {
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
           open={open}
-          onClose={handleClose}
+           onClose={handleClose}
           closeAfterTransition
           BackdropComponent={Backdrop}
           BackdropProps={{
@@ -75,7 +75,7 @@ export default function AddRoom() {
                 control
               </p>
               <div className="room-name">
-                <RoomDetails onClose={handleClose}/>
+                <RoomDetails onClosee={setOpen}/>
               </div>
             </Box>
           </Fade>

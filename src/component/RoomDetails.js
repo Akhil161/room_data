@@ -2,12 +2,11 @@ import { Popover } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "./RoomDetails.css";
 import SwitchBoard from "./SwitchBoard";
-import {useDispatch} from 'react-redux'
-import { saveData } from "../redux/Action";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { saveData } from "../redux/Action";
 
 export default function RoomDetails(props) {
-  const {onClose}=props
   let [count, setCount] = useState(1);
   let [arr, setArr] = useState([]);
   let [data, setdata] = useState([
@@ -32,16 +31,20 @@ export default function RoomDetails(props) {
 
   // Redux
   let dispatch = useDispatch();
-  
+  const reduxData = useSelector((state) => {
+    return state.sar;
+  });
+
+  console.log("reduxData", reduxData);
 
   console.log("At  ", data);
   console.log(selectTab);
   function handleSwitch() {
     let roomNamme = [...data].filter((e) => {
-      return e.roomname == selectTab;
+      return e.roomname == "Living Room";
     });
     let roomNamme1 = [...data].filter((e) => {
-      return e.roomname != selectTab;
+      return e.roomname != "Living Room";
     });
 
     console.log("roomNamme", roomNamme);
@@ -65,7 +68,7 @@ export default function RoomDetails(props) {
       let newData = [
         ...data,
         {
-          roomname: selectTab,
+          roomname: "Living Room",
           roomId: data.length,
           switchBoards: [
             {
@@ -144,7 +147,7 @@ export default function RoomDetails(props) {
                       //       ]
                       // );
                       setSelectTab(e.name);
-                      setAddSwitch(!addSwitch);
+                      // setAddSwitch(!addSwitch);
                     }}
                     className={`room-name-btn ${
                       e.name == "Living Room" ? "background-blue" : ""
@@ -192,34 +195,50 @@ export default function RoomDetails(props) {
         </Popover>
       </div>
       <div className="SwitchBoard-container">
-      {data?.find((d) => {
-        console.log(d.roomname);
-        return d.roomname === selectTab;
-      })?.switchBoards.length !== 0
-        ? data
-            ?.find((d) => {
-              return d.roomname === selectTab;
-            })
-            ?.switchBoards.map((e, i) => {
-              return (
-                <SwitchBoard
-                  SwitchBoard={i}
-                  data={data}
-                  setData={setdata}
-                  selectTab={selectTab}
-                />
-              );
-            })
-        : null}
-</div>
+        {data?.find((d) => {
+          console.log(d.roomname);
+          return d.roomname === "Living Room";
+        })?.switchBoards.length !== 0
+          ? data
+              ?.find((d) => {
+                return d.roomname === "Living Room";
+              })
+              ?.switchBoards.map((e, i) => {
+                return (
+                  <SwitchBoard
+                    SwitchBoard={i}
+                    data={data}
+                    setData={setdata}
+                    selectTab={"Living Room"}
+                  />
+                );
+              })
+          : null}
+      </div>
       <div onClick={handleSwitch} className="room-add-switchBoard">
         <div className="room-add-switchBoard-icon">
           <span class="material-icons">add</span>
         </div>
         <div className="room-add-switchBoard-title">Add SwitchBoard</div>
       </div>
-      
-      <div  className="room-details-bottom-cont" >
+
+      <div
+        className="room-details-bottom-cont"
+        onClick={(e) => {
+          e.preventDefault();
+          let newData = data;
+          newData[0].roomname = selectTab;
+          console.log("sandeep", newData);
+          props.onClosee();
+          dispatch(saveData(newData));
+        }}
+
+        // console.log("hijhg");
+        // dispatch(saveData({data}));
+        // console.log("Final Data",dataState );
+
+        //  }
+      >
         {/* <div className="room-details-bottom-top">
         ₹ 2000 will be charged as One Time Security at checkout
         </div>
@@ -265,19 +284,17 @@ export default function RoomDetails(props) {
           </div>
         </div>
         </Link> */}
-         <div className='addroom-bottom-upper1-cont'><span className='addroom-bottom-upper-cont fontSize'>₹ 2000 will be charged as One Time Security at checkout</span></div>
-        <div className='addroom-bottom-upper2-cont' onClick={()=>{onClose()}
-           
-          // console.log("hijhg");      
-              // dispatch(saveData({data}));
-              // console.log("Final Data",dataState );
-
-      }>
-          <span className='cuurr'>₹ 150</span>
-          <span className='sub sizefont'>Monthly Subscription Fee</span>
-          <span className='next'>Next</span>
+        <div className="addroom-bottom-upper1-cont">
+          <span className="addroom-bottom-upper-cont fontSize">
+            ₹ 2000 will be charged as One Time Security at checkout
+          </span>
         </div>
-      </div> 
+        <div className="addroom-bottom-upper2-cont">
+          <span className="cuurr">₹ 150</span>
+          <span className="sub sizefont">Monthly Subscription Fee</span>
+          <span className="next">Next</span>
+        </div>
+      </div>
     </div>
   );
 }

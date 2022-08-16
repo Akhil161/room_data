@@ -117,7 +117,7 @@ const {height, width } = useWindowDimensions();
                 control
               </p>
               <div className="room-name">
-                <RoomDetails />
+                <RoomDetails onClosee={handleClose}/>
               </div>
             </Box>
           </Fade>
