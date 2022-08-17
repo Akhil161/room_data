@@ -14,10 +14,10 @@ export default function Planselect() {
                 </div>
     {
         data.length!==0?
-        data.map((e)=>{
+        data.map((e,i)=>{
             return(
                 
-                <div className="pack-caontainer">
+                <div className="pack-caontainer" key={i}>
                   <div className="pack-inner">
                   <p>{e.top_title}</p>
                   <p

@@ -14,9 +14,7 @@
     .model::-webkit-scrollbar{
        width: 0;
     }
-    .css-62zbcy{
-       height: 600px !important;
-    }
+    
     .add-room{
         display: flex;
         align-items: center;

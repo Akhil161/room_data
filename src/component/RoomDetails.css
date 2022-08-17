@@ -1,104 +1,105 @@
 @media screen and (max-width: 400px) {
-   .room-name-cont{
+  .room-name-cont {
     display: flex;
     position: absolute;
     top: 14%;
     left: 7%;
     overflow-x: auto;
     width: 339px;
-   }
-   .background-blue{
-      border-color: #3052ac;
-   }
-   .room-name-cont::-webkit-scrollbar{
+  }
+  .background-blue {
+    border-color: #3052ac;
+  }
+  .room-name-cont::-webkit-scrollbar {
     width: 0;
-   }
-   .room-name-btn{
-    
+  }
+  .room-name-btn {
     min-width: 130px;
-    min-height: 36px;
-    margin-right: 5vw ;
-    border-radius:15px ;
+    min-height: 42px;
+    margin-right: 5vw;
+    border-radius: 15px;
     font-size: 12px;
     background-color: white;
     background: rgba(48, 82, 172, 0.03);
-box-shadow: 0px 0px 4px #3052AC;
-border-radius: 20px;
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 19px;
+    box-shadow: 0px 0px 4px #3052ac;
+    border-radius: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
 
-color: #000000;
-   }
-   .input-roomName{
+    color: #000000;
+  }
+  .input-roomName {
     border: none;
     border-radius: 30px;
     padding-left: 15px;
     width: 35vw;
     outline: none;
-   }
-   .switchBoard-container{
+  }
+  .switchBoard-container {
     overflow-y: auto;
     max-height: 25vh;
-   }
-   .room-add-switchBoard{
-      display: flex;
-      align-items: center;
-      box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-      border-radius: 7px;
-     
+  }
+  .room-add-switchBoard {
+    display: flex;
+    align-items: center;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border-radius: 7px;
 
-      
-font-size: 17px;
-line-height: 23px;
+    font-size: 17px;
+    line-height: 23px;
 
-color: #000000;
-      width: 345px;
-      height: 55px;
-      left: 8%;
-      
-      padding: 2px;
-      font-weight: 400;
-      position: absolute;
-      top: 67%;
-   }
-   .room-add-switchBoard-icon{
+    color: #000000;
+    width: 340px;
+    height: 55px;
+    left: 6%;
+
+    padding: 2px;
+    font-weight: 400;
+    position: absolute;
+    top: 67%;
+  }
+  .plus-img {
+    height: 19px;
+    width: 19px;
+    margin-left: 59%;
+    margin-bottom: 37%;
+  }
+  .room-add-switchBoard-icon {
     margin-left: 3%;
     margin-top: 0.3rem;
-   }
-   .room-add-switchBoard-title{
-    margin-left: 10%;
+  }
+  .room-add-switchBoard-title {
+    margin-left: 14%;
     font-weight: 600;
-    
-   }
-   .room-details-bottom-cont{
-      color: aliceblue;
-      
-      margin: 1.5rem 5%;
-      border-radius: 7px;
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      width: 345px;
-      height: 76px;
-      left: 3%;
-      top: 76%;
-      filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.3));
-   }
-   .room-details-bottom-top{
-      background-color: #072370;
-      border-top-left-radius: 7px;
-      border-top-right-radius: 7px;
-      padding-left: 3%;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 12px;
-      line-height: 16px;
-      color: #FFFFFF;
-      height: 24%;
-   }
-   .room-details-bottom-botCon{
+  }
+  .room-details-bottom-cont {
+    color: aliceblue;
+    margin: 1.5rem 5%;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 345px;
+    height: 76px;
+    left: 0.5%;
+    top: 76%;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.3));
+  }
+  .room-details-bottom-top {
+    background-color: #072370;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding-left: 3%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #ffffff;
+    height: 24%;
+  }
+  .room-details-bottom-botCon {
     background-color: #3052ac;
     display: flex;
     align-items: center;
@@ -106,7 +107,5 @@ color: #000000;
     justify-content: space-between;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
-   
-   }
-   
+  }
 }

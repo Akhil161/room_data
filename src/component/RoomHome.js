@@ -1,4 +1,3 @@
-import { DriveFileMoveRounded } from '@mui/icons-material'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -10,16 +9,17 @@ import { useWindowDimensions } from "./window/Resize";
 import RoomDetails from "./RoomDetails";
 import './RoomHome.css'
 export default function RoomHome() {
-//   let dataState = useSelector((state) => {
-//     return state.sar;
-// })
+  let dataState = useSelector((state) => {
+    return state.sar;
+})
 let [rooms,setRoom] = useState([]);
 let [open, setOpen] = useState(false);
 const handleOpen = () => setOpen(true);
 const handleClose = () => setOpen(false);
-const {height, width } = useWindowDimensions();
+const {width } = useWindowDimensions();
+console.log(dataState);
 
-// useEffect((()=>{setRoom(dataState.data.data);}),[rooms]);
+ useEffect((()=>{setRoom(dataState);}),[open]);
 
   // console.log("Final Data",dataState );
   return (
@@ -40,8 +40,8 @@ const {height, width } = useWindowDimensions();
           }}>in your home</span>
         </div>
       </div>
-      
-      {/* {
+      <div className='add-room-details-container'>
+      {
           rooms.length!==0 ?
           rooms.map((e,i)=>{
           return(  <div className='addRoom-room-detail'>
@@ -52,19 +52,19 @@ const {height, width } = useWindowDimensions();
          </div>
           )
           }):null
-      } */}
-      <div className='addRoom-room-detail'>
+      }
+      {/* <div className='addRoom-room-detail'>
          <img className='addroom-lamp-icon' src={process.env.PUBLIC_URL+"/assets/icon/Group.png"} alt="lamp"></img>
          <span className='addroom-room-name'>Living Room</span>
          <span className='addroom-room-details1'>1 x Light 1 x Fan 1 x AC</span>
          <span className='addroom-room-currenyM'>&#8377; 150</span>
-      </div>
+      </div> */}
       <div className='addRoom-room-detail' onClick={handleOpen}>
          <img className='addroom-plus-icon' src={process.env.PUBLIC_URL+"/assets/icon/Frame.png"} alt="lamp"></img>
          <span className='addroom-add-room-name'>Add Room</span>
             </div>
 
-      
+      </div>
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
@@ -77,31 +77,15 @@ const {height, width } = useWindowDimensions();
           }} 
           className="model"
           sx={{
-            
-            
             scrollbar:"auto",
           }}
         >
           <Fade in={open}>
             <Box
               sx={{
-                // position: "absolute",
-                // top: "50%",
-                // left: "50%",
-                // height:"100%",
-                // overflowY:"auto",
-                // transform: "translate(-50%, -50%)",
-                // width: width,
-                // bgcolor: "background.paper",
-                
-                // boxShadow: 24,
-                
-                // borderTopLeftRadius: "2rem",
-                // borderTopRightRadius: "2rem",
-                // p: 4,
 
                 position: "absolute",
-                width: "390px",
+                width: width,
                 height: "605px",
                 left: "0px",
                 top: "239px",

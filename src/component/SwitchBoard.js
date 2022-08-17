@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
+
 import React, { useEffect, useState } from "react";
 import "./SwitchBoard.css";
 
@@ -44,13 +43,14 @@ export default function SwitchBoard(props) {
         <div
           style={{ display: "flex", alignItems: "center", marginLeft: "6%" }}
         >
-          <FontAwesomeIcon icon={faLightbulb}></FontAwesomeIcon>
+        
+          <img className="IMG" src={process.env.PUBLIC_URL+"/assets/icon/Group.png"} alt="lamp"></img>
           <div style={{ marginLeft: "2rem" }}>Lights</div>
         </div>
         <div className="room-appliance-counter">
           <div
             onClick={() => {
-              if (light >= 0) setLight(light - 1);
+              if (light > 0) setLight(light - 1);
             }}
           >
             -
@@ -63,13 +63,15 @@ export default function SwitchBoard(props) {
         <div
           style={{ display: "flex", alignItems: "center", marginLeft: "6%" }}
         >
-          <FontAwesomeIcon icon={faLightbulb}></FontAwesomeIcon>
+        <img className="IMG" src={process.env.PUBLIC_URL+"/assets/icon/Group-1.png"} alt="fan"></img>
+
+        
           <div style={{ marginLeft: "2rem" }}>Fan</div>
         </div>
         <div className="room-appliance-counter">
           <div
             onClick={() => {
-              if (fan >= 0) setFan(fan - 1);
+              if (fan > 0) setFan(fan - 1);
             }}
           >
             -
@@ -82,13 +84,13 @@ export default function SwitchBoard(props) {
         <div
           style={{ display: "flex", alignItems: "center", marginLeft: "6%" }}
         >
-          <FontAwesomeIcon icon={faLightbulb}></FontAwesomeIcon>
+          <img className="IMG" src={process.env.PUBLIC_URL+"/assets/icon/Group w.png"} alt="ac"></img>
           <div style={{ marginLeft: "2rem" }}>AC</div>
         </div>
         <div className="room-appliance-counter">
           <div
             onClick={() => {
-              if (ac >= 0) setAc(ac - 1);
+              if (ac > 0) setAc(ac - 1);
             }}
           >
             -

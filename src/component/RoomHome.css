@@ -1,8 +1,7 @@
 @media screen and (max-width: 400px) {
   .addRoom-d-c {
-    
     width: 100vw;
-    height: 844px;
+    height: 70vh;
     left: 727px;
     top: -423px;
     border-radius: 0px;
@@ -32,7 +31,7 @@
 
     color: #ffffff;
   }
-  .addRoom-room-detail {
+  /* .addRoom-room-detail {
     position: relative;
     width: 345px;
     height: 73px;
@@ -42,20 +41,29 @@
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     margin-bottom: 4%;
-  }
-  .addroom-lamp-icon{
+  } */
+  .addRoom-room-detail {
+    position: relative;
+    width: 345px;
+    height: 73px;
+    left: 23px;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 25%);
+    border-radius: 12px;
+    margin-bottom: 4%;
+}
+  .addroom-lamp-icon {
     position: absolute;
     height: 35.954887px;
     width: 24.976519px;
-    
+
     border-radius: 0px;
     left: 8.07%;
     right: 0.05%;
     top: 29%;
     bottom: 0.15%;
-
   }
-  .addroom-room-name{
+  .addroom-room-name {
     position: absolute;
     width: fit-content;
     height: 23px;
@@ -65,41 +73,41 @@
     font-size: 18px;
     line-height: 23px;
   }
-  .addroom-room-details1{
+  .addroom-room-details1 {
     position: absolute;
     width: fit-content;
     height: 14px;
     left: 22%;
     top: 60%;
-    font-family: 'Manrope';
+    font-family: "Manrope";
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 14px;
-    color: #747474;    
+    color: #747474;
   }
-  .sizefont{
+  .sizefont {
     width: 130px !important;
     font-size: 10px !important;
   }
-  .fontSize{
+  .fontSize {
     font-size: 12px !important;
   }
-  .addroom-room-currenyM{
+  .addroom-room-currenyM {
     position: absolute;
     width: fit-content;
     height: 22px;
     left: 79%;
     top: 33%;
-    font-family: 'Manrope';
+    font-family: "Manrope";
     font-style: normal;
     font-weight: 600;
     font-size: 23px;
     line-height: 27px;
     color: #000000;
   }
-  
-  .addroom-bottom-container{
+
+  /* .addroom-bottom-container {
     position: relative;
     z-index: 3;
     width: 345px;
@@ -107,8 +115,15 @@
     left: 5.5%;
     top: 64%;
     filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.3));
+  } */
+  .addroom-bottom-container {
+    position: relative;
+    width: 345px;
+    height: 76px;
+    margin-left: 6vw;
+    margin-top: 3vh;
   }
-  .addroom-bottom-upper-cont{
+  .addroom-bottom-upper-cont {
     position: absolute;
     width: -webkit-fill-available;
     height: 18px;
@@ -118,41 +133,41 @@
     font-weight: 600;
     font-size: 13px;
     line-height: 16px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
-  .addroom-bottom-upper1-cont{
+  .addroom-bottom-upper1-cont {
     position: absolute;
     width: 345px;
     height: 28px;
     top: 0px;
     background: #072370;
     border-radius: 10px 10px 0px 0px;
-}
-.addroom-bottom-upper2-cont{
-position: absolute;
-width: 345px;
-height: 48px;
-left: 0;
-top: 37%;
+  }
+  .addroom-bottom-upper2-cont {
+    position: absolute;
+    width: 345px;
+    height: 48px;
+    left: 0;
+    top: 37%;
 
-background: #3052AC;
-border-radius: 0px 0px 10px 10px;
-}
-.addroom-bottom-upper2-cont .cuurr{
+    background: #3052ac;
+    border-radius: 0px 0px 10px 10px;
+  }
+  .addroom-bottom-upper2-cont .cuurr {
     position: absolute;
     left: 10%;
 
     right: 75.38%;
     top: 10.17%;
 
-    font-family: 'Manrope';
+    font-family: "Manrope";
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
     line-height: 25px;
-    color: #FFFFFF;
-}
-.addroom-bottom-upper2-cont .sub{
+    color: #ffffff;
+  }
+  .addroom-bottom-upper2-cont .sub {
     position: absolute;
     left: 10%;
     right: 64.36%;
@@ -163,71 +178,76 @@ border-radius: 0px 0px 10px 10px;
     font-weight: 400;
     font-size: 8px;
     line-height: 11px;
-    color: #FFFFFF;
-}
-.addroom-bottom-upper2-cont .next{
+    color: #ffffff;
+  }
+  .addroom-bottom-upper2-cont .next {
     position: absolute;
     width: 43px;
     height: 21px;
     left: 76%;
     top: 21%;
-    font-family: 'Manrope';
+    font-family: "Manrope";
     font-style: normal;
     font-weight: 600;
     font-size: 29px;
     line-height: 25px;
-    color: #FFFFFF;
-}
-.addroom-plus-icon{
-  position: absolute;
-  left: 6.27%;
-  
-  top: 19.18%;
-  bottom: 3.18%;
-  height: 53%;
-
-}
-.addroom-add-room-name{
-  position: absolute;
+    color: #ffffff;
+  }
+  .addroom-plus-icon {
+    position: absolute;
+    left: 9.27%;
+    top: 31.18%;
+    bottom: 3.18%;
+    height: 37%;
+    width: 8%;
+  }
+  .addroom-add-room-name {
+    position: absolute;
     width: 99px;
     height: 23px;
     left: 29%;
     top: 32%;
-    font-family: 'Manrope';
+    font-family: "Manrope";
     font-style: normal;
     font-weight: 600;
     font-size: 21px;
     line-height: 23px;
     color: #000000;
-}
-.add-room-titl{
-  position: absolute;
-width: 240px;
-height: 30px;
-left: 33px;
-top: 1%;
-  font-style: normal;
-font-weight: 700;
-font-size: 28px;
-line-height: 38px;
+  }
+  .add-room-titl {
+    position: absolute;
+    width: 240px;
+    height: 30px;
+    left: 33px;
+    top: 1%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
 
-color: #000000;
-}
-.add-room-subtitl{
-  position: absolute;
-width: 300px;
-height: 31px;
-left: 33px;
-top:7%;
+    color: #000000;
+  }
+  .add-room-subtitl {
+    position: absolute;
+    width: 300px;
+    height: 31px;
+    left: 33px;
+    top: 7%;
 
-font-family: 'Manrope';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 14px;
-/* or 117% */
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    /* or 117% */
 
+    color: #747474;
+  }
 
-color: #747474;
-}
+  .add-room-details-container{
+    margin-top: 23vh;
+    min-height: 60vh;
+    overflow: auto;
+    scrollbar-width: 0;
+  }
 }

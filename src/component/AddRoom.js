@@ -12,7 +12,7 @@ export default function AddRoom() {
   let [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const {height, width } = useWindowDimensions();
+  const {width} = useWindowDimensions();
   console.log(open);
   return (
     <div>

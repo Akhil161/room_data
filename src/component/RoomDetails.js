@@ -1,14 +1,13 @@
 import { Popover } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./RoomDetails.css";
 import SwitchBoard from "./SwitchBoard";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { saveData } from "../redux/Action";
 
 export default function RoomDetails(props) {
-  let [count, setCount] = useState(1);
-  let [arr, setArr] = useState([]);
+  // let [count, setCount] = useState(1);
+  // let [arr, setArr] = useState([]);
   let [data, setdata] = useState([
     {
       roomname: "Living Room",
@@ -26,7 +25,7 @@ export default function RoomDetails(props) {
     },
   ]);
   let [selectTab, setSelectTab] = useState("Living Room");
-  let [filterRoom, setFilterRoom] = useState([]);
+  // let [filterRoom, setFilterRoom] = useState([]);
   const [addSwitch, setAddSwitch] = useState(false);
 
   // Redux
@@ -41,10 +40,10 @@ export default function RoomDetails(props) {
   console.log(selectTab);
   function handleSwitch() {
     let roomNamme = [...data].filter((e) => {
-      return e.roomname == "Living Room";
+      return e.roomname === "Living Room";
     });
     let roomNamme1 = [...data].filter((e) => {
-      return e.roomname != "Living Room";
+      return e.roomname !== "Living Room";
     });
 
     console.log("roomNamme", roomNamme);
@@ -150,7 +149,7 @@ export default function RoomDetails(props) {
                       // setAddSwitch(!addSwitch);
                     }}
                     className={`room-name-btn ${
-                      e.name == "Living Room" ? "background-blue" : ""
+                      e.name === "Living Room" ? "background-blue" : ""
                     }`}
                     key={i}
                   >
@@ -217,7 +216,7 @@ export default function RoomDetails(props) {
       </div>
       <div onClick={handleSwitch} className="room-add-switchBoard">
         <div className="room-add-switchBoard-icon">
-          <span class="material-icons">add</span>
+        <img className="plus-img" src={process.env.PUBLIC_URL+"/assets/icon/Frame.png"} alt="add"></img>
         </div>
         <div className="room-add-switchBoard-title">Add SwitchBoard</div>
       </div>
