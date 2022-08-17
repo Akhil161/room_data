@@ -1,9 +1,9 @@
 @media screen and (max-width: 460px) {
 .SwitchBoard-container{
     position: absolute;
-    width: 91%;
+    width: 95%;
     height: 18px;
-    left: 5%;
+    left: 2%;
     top: 24%;
     font-family: 'Manrope';
     font-style: normal;
@@ -16,7 +16,7 @@
 }
 .room-appliance-count{
     display: flex;
-    width: 340px;
+    width: 98%;
     height: 55px;
     justify-content: space-between;
     border-radius: 7px;

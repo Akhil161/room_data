@@ -5,7 +5,7 @@
     top: 14%;
     left: 7%;
     overflow-x: auto;
-    width: auto;
+    width: 82%;
   }
   .background-blue {
     border-color: #3052ac;
@@ -46,14 +46,14 @@
     align-items: center;
     box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
     border-radius: 7px;
-
+    margin-top: 2%;
     font-size: 17px;
     line-height: 23px;
 
     color: #000000;
-    width: 340px;
+    width: 94%;
     height: 55px;
-    left: 6%;
+    left: 3%;
 
     padding: 2px;
     font-weight: 400;
@@ -76,15 +76,15 @@
   }
   .room-details-bottom-cont {
     color: aliceblue;
-    margin: 1.5rem 5%;
+    
     border-radius: 7px;
     display: flex;
     flex-direction: column;
     position: absolute;
-    width: 345px;
+    width: 95%;
     height: 76px;
-    left: 0.5%;
-    top: 76%;
+    left: 2.5%;
+    top: 82%;
     filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.3));
   }
   .room-details-bottom-top {

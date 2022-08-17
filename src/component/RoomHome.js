@@ -78,18 +78,19 @@ console.log(dataState);
           className="model"
           sx={{
             scrollbar:"auto",
+            scrollbarWidth:"0",
           }}
         >
           <Fade in={open}>
             <Box
               sx={{
-
-                position: "absolute",
-                width: width,
-                height: "605px",
-                left: "0px",
-                top: "239px",
-
+                position:"relative",
+                marginTop:"38%",
+                width: "99.98%",
+                height: "80%",
+                // left: "0px",
+                // top: "239px",
+                
                 background: "#FFFFFF",
                 boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                 borderRadius: "29px 29px 0px 0px",

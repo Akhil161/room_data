@@ -1,6 +1,6 @@
 @media screen and (max-width: 460px) {
   .addRoom-d-c {
-    width: 100vw;
+    width: 100%;
     height: 70vh;
     left: 727px;
     top: -423px;
@@ -9,7 +9,7 @@
   }
   .addRoom-title-cont {
     position: absolute;
-    width: 100vw;
+    width: 99.99%;
     height: 172px;
     left: 0px;
     top: 0px;
@@ -19,7 +19,7 @@
   }
   .addRoom-title-inner {
     position: absolute;
-    width: 338px;
+    
     height: 98px;
     left: 33px;
     top: 47px;
@@ -52,6 +52,7 @@
     box-shadow: 0px 1px 4px rgb(0 0 0 / 25%);
     border-radius: 12px;
     margin-bottom: 4%;
+    margin-top: 2%;
 }
   .addroom-lamp-icon {
     position: absolute;
@@ -128,10 +129,10 @@
     width: -webkit-fill-available;
     height: 18px;
     left: 6%;
-    top: 20%;
+    top: 22%;
     font-style: normal;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 11px;
     line-height: 16px;
     color: #ffffff;
   }
@@ -139,6 +140,7 @@
     position: absolute;
     width: 345px;
     height: 28px;
+
     top: 0px;
     background: #072370;
     border-radius: 10px 10px 0px 0px;
@@ -163,7 +165,7 @@
     font-family: "Manrope";
     font-style: normal;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 25px;
     color: #ffffff;
   }
@@ -176,7 +178,7 @@
 
     font-style: normal;
     font-weight: 400;
-    font-size: 8px;
+    font-size: 7px;
     line-height: 11px;
     color: #ffffff;
   }
@@ -246,7 +248,7 @@
 
   .add-room-details-container{
     margin-top: 23vh;
-    min-height: 60vh;
+    min-height: 80%;
     overflow: auto;
     scrollbar-width: 0;
   }
