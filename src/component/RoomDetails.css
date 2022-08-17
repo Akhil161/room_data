@@ -1,11 +1,11 @@
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 460px) {
   .room-name-cont {
     display: flex;
     position: absolute;
     top: 14%;
     left: 7%;
     overflow-x: auto;
-    width: 339px;
+    width: auto;
   }
   .background-blue {
     border-color: #3052ac;
@@ -14,7 +14,7 @@
     width: 0;
   }
   .room-name-btn {
-    min-width: 130px;
+    min-width: 135px;
     min-height: 42px;
     margin-right: 5vw;
     border-radius: 15px;

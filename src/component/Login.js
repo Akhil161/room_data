@@ -7,8 +7,8 @@ import "./Login.css";
 export default function Login() {
   return (
     <div>
-      <div className="login-top">
-        <p className="login-text">Give us your<br/> <strong>basic details</strong></p>
+      <div className="login-top-main">
+        <div className="login-text">Give us your<br/> <strong>basic details</strong></div>
       </div>
 
       <div className="input-group mb-3 mt-3 input-w">
@@ -36,7 +36,7 @@ export default function Login() {
         />
       </div>
       <div className="d-grid gap-2 d-md-block next-btn mt-4" >
-      <Link to="plan" className="link"><button style={{width:"100%"}} type="button">
+      <Link to="plan" className="link"><button  type="button">
            Next
         </button></Link>
       </div>
