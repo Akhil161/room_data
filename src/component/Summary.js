@@ -24,9 +24,45 @@ export default function Summary() {
           <div className='summary-rooms-inner-cont'>
              <div className='summary-room-details'>
                 <span className='summary-room-name'>Living Room</span>
+                <span className='summary-room-cutomize'>Customize</span>
+                <span className='summary-room-money'>₹ 150</span>
+             </div>
+             <div className='summary-room-details'>
+                <span className='summary-room-name'>Dinving Room</span>
+                <span className='summary-room-cutomize'>Customize</span>
+                <span className='summary-room-money'>₹ 150</span>
+             </div>
+             <div className='summary-room-details'>
+                <span className='summary-room-name'>Living Room</span>
+                <span className='summary-room-cutomize'>Customize</span>
+                <span className='summary-room-money'>₹ 150</span>
+             </div>
+             <div className='summary-room-details'>
+                <span className='summary-room-name'>Dinving Room</span>
+                <span className='summary-room-cutomize'>Customize</span>
+                <span className='summary-room-money'>₹ 150</span>
              </div>
           </div>
-      </div>
+       </div>
+       
+       <div className='summary-room-frequantBuy-conyainer'>
+            <div className='summary-room-frequantBuy-tit'>
+              <span className='summary-room-frequantBuy-title'>Frequently Brought Together</span>
+            </div>
+            <div>
+              <div>
+                <img></img>
+              </div>
+              <div>
+                <span>Universal Remote</span>
+                <span>Control a room’s remotes smartly & via your voice</span>
+                <div>
+                  <span>₹ 60/m</span>
+                  <span>Add</span>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
   )
 }

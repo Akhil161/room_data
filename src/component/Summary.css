@@ -9,11 +9,10 @@
     background: #ffffff;
   }
   .summary-title-cont {
-    position: absolute;
+    margin-bottom: 5%;
     width: 100vw;
     height: 172px;
-    left: 0px;
-    top: 0px;
+    
 
     background: #3052ac;
     border-radius: 0px 0px 31px 31px;
@@ -33,17 +32,16 @@
     color: #ffffff;
   }
   .summary-rooms-cont {
-    position: absolute;
+    
     width: 345px;
-    height: 217px;
-    left: 22px;
-    top: 200px;
-    background-color: aquamarine;
+    height: 14%;
+    margin: auto;
+    
   }
   .summary-rooms-inner-cont {
     position: absolute;
     width: 345px;
-    height: 217px;
+    height: fit-content;
     /* left: 22px;
 top: 200px; */
 
@@ -52,22 +50,69 @@ top: 200px; */
     border-radius: 12px;
   }
   .summary-room-details {
+    position: relative;
     margin-top: 2%;
-    width: 100vw;
-    background-color: red;
+    height: 6vh;
+    
   }
   .summary-room-name {
     position: absolute;
-    width: 99px;
+    width: fit-content;
     height: 23px;
-    left: 33px;
-    top: 4%;
+    left: 3%;
+    top: 13%;
     font-style: normal;
     font-weight: 600;
     font-size: 17px;
     line-height: 23px;
-
     color: #000000;
-  }
+}
+.summary-room-cutomize {
+  position: absolute;
+  width: 55px;
+  height: 15px;
+  left: 3%;
+  top: 52%;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #747474;
+}
+.summary-room-money {
+  position: absolute;
+  width: 52px;
+  height: 21px;
   
+  right: 5%;
+  top: 21%;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: right;
+  color: #000000;
+}
+.summary-room-frequantBuy-conyainer{
+  margin: auto;
+  width: 345px;
+}
+.summary-room-frequantBuy-tit {
+  position: absolute;
+  width: 231px;
+  height: 23px;
+  left: 33px;
+  top: 439px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 23px;
+  color: #000000;
+}
+.summary-room-frequantBuy-title{
+  
+}
 }
