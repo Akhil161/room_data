@@ -100,7 +100,6 @@ top: 200px; */
   width: 345px;
 }
 .summary-room-frequantBuy-tit {
-  position: absolute;
   width: 231px;
   height: 23px;
   left: 33px;
@@ -111,8 +110,19 @@ top: 200px; */
   font-size: 19px;
   line-height: 23px;
   color: #000000;
+  margin-bottom: 5vh;
 }
 .summary-room-frequantBuy-title{
   
+}
+.summary-room-frequantBuy-product{
+   display: flex;
+   width: 107px;
+height: 146px;
+background: rgba(48, 82, 172, 0.25);
+border-radius: 12px 0px 0px 12px;
+}
+.summary-room-frequantBuy-product-img{
+
 }
 }

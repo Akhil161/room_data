@@ -49,9 +49,9 @@ export default function Summary() {
             <div className='summary-room-frequantBuy-tit'>
               <span className='summary-room-frequantBuy-title'>Frequently Brought Together</span>
             </div>
-            <div>
-              <div>
-                <img></img>
+            <div className='summary-room-frequantBuy-product'>
+              <div className='summary-room-frequantBuy-product-img'>
+                <img style={{width:"145px"}} src={process.env.PUBLIC_URL+"/assets/img/remote.png"} alt="remote"></img>
               </div>
               <div>
                 <span>Universal Remote</span>
