@@ -126,13 +126,5 @@ top: 200px; */
   border-radius: 12px;
 }
 .summary-room-frequantBuy-product-img{
-  width: 107px;
-height: 146px;
-left: 22px;
-top: 590px;
-
-background: rgba(48, 82, 172, 0.25);
-border-radius: 12px 12px 0px 0px;
-transform: rotate(-90deg);
 }
 }
