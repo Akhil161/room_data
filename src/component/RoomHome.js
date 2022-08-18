@@ -74,6 +74,7 @@ export default function RoomHome() {
          <span className='addroom-room-details1'>1 x Light 1 x Fan 1 x AC</span>
          <span className='addroom-room-currenyM'>&#8377; 150</span>
       </div> */}
+      <div className="addRoom-room-cont2">
         <div className="addRoom-room-cont1" onClick={handleOpen}>
           <img
             className="addroom-plus-icon"
@@ -81,6 +82,7 @@ export default function RoomHome() {
             alt="lamp"
           ></img>
           <span className="addroom-add-room-name">Add Room</span>
+        </div>
         </div>
       </div>
       <Modal
@@ -105,9 +107,9 @@ export default function RoomHome() {
               position: "relative",
 
               width: "99.99%",
-              height: "70vh",
+              height: "80vh",
               left: "0px",
-              top: "25%",
+              top: "22%",
 
               background: "#FFFFFF",
               boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",

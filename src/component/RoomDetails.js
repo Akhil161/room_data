@@ -217,7 +217,7 @@ export default function RoomDetails(props) {
               })
           : null}
           </div>
-      </div>
+    
       {/* <div onClick={handleSwitch} className="room-add-switchBoard">
         <div className="room-add-switchBoard-icon">
         <img className="plus-img" src={process.env.PUBLIC_URL+"/assets/icon/Frame.png"} alt="add"></img>
@@ -231,6 +231,7 @@ export default function RoomDetails(props) {
 alignItems: "center",justifyItems:"centre"}} src={process.env.PUBLIC_URL + "/assets/icon/Frame.png"} alt="plus"></img>
           </div>
           <div className="SwitchBoard-appliance-name-text">Add SwitchBoard</div>
+    </div>
     </div>
     </div>
       {/* <div

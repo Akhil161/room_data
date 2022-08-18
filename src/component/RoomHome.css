@@ -25,10 +25,15 @@
     scrollbar-width: 0;
     min-height: 60vh;
   }
+  .addRoom-room-cont2{
+    position: relative;
+    width: 100%;
+  }
   .addRoom-room-cont1 {
+    position: absolute;
     margin-top: 4%;
     width: 87%;
-    margin-left: 6.5%;
+    left:6.5%;
     height: 55px;
     position: relative;
     background: #ffffff;
@@ -63,7 +68,7 @@
     position: relative;
 width: 87%;
 height: 73px;
-left: 22px;
+left: 6.5%;
 margin-top: 5%;
 
 background: #FFFFFF;
@@ -79,7 +84,7 @@ left: 8%;
   }
   .addroom-room-name {
     position: absolute;
-width: 99px;
+width: fit-content;
 height: 23px;
 left: 18%;
 top: 19%;
