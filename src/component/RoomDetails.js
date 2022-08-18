@@ -6,8 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { saveData } from "../redux/Action";
 
 export default function RoomDetails(props) {
-  // let [count, setCount] = useState(1);
-  // let [arr, setArr] = useState([]);
+  let [controlBtn,setControlBtn]=({
+    light:0,
+    fan:0,
+    ac:0
+  })
   let [data, setdata] = useState([
     {
       roomname: "Living Room",
@@ -210,20 +213,29 @@ export default function RoomDetails(props) {
                     data={data}
                     setData={setdata}
                     selectTab={"Living Room"}
+                    setControlBtn={setControlBtn}
                   />
                 );
               })
           : null}
           </div>
       </div>
-      <div onClick={handleSwitch} className="room-add-switchBoard">
+      {/* <div onClick={handleSwitch} className="room-add-switchBoard">
         <div className="room-add-switchBoard-icon">
         <img className="plus-img" src={process.env.PUBLIC_URL+"/assets/icon/Frame.png"} alt="add"></img>
         </div>
         <div className="room-add-switchBoard-title">Add SwitchBoard</div>
-      </div>
-{/* 
-      <div
+      </div> */}
+      <div style={{width:"100%"}}>
+        <div  onClick={handleSwitch} className="room-appliance-count" style={{width:"90%",left:"5%",top:0,}}>
+      <div className="IMG">
+          <img style={{height:"14.98px",width:"14.06px",display: "flex",
+alignItems: "center",justifyItems:"centre"}} src={process.env.PUBLIC_URL + "/assets/icon/Frame.png"} alt="plus"></img>
+          </div>
+          <div className="SwitchBoard-appliance-name-text">Add SwitchBoard</div>
+    </div>
+    </div>
+      {/* <div
         className="room-details-bottom-cont"
         onClick={(e) => {
           e.preventDefault();
@@ -244,7 +256,31 @@ export default function RoomDetails(props) {
           <span className="sub sizefont">Monthly Subscription Fee</span>
           <span className="next">Next</span>
         </div> 
-      </div> */}
+      </div>  */}
+      <div className="addroom-bottom-container"
+      onClick={(e) => {
+        e.preventDefault();
+        let newData = data;
+        newData[0].roomname = selectTab;
+        console.log("sandeep", newData);
+        props.onClosee();
+        dispatch(saveData(newData));
+      }}
+      >
+        
+          <div className="addroom-bottom-upper1-cont">
+            ₹ 2000{" "}
+            <span style={{ fontWeight: "400" }}>
+              will be charged as One Time Security at checkout
+            </span>
+          </div>
+          <div className="addroom-bottom-upper2-cont">
+            <span className="cuurr">₹ 150</span>
+            <span className="sub ">Monthly Subscription Fee</span>
+            <span className="next">Next</span>
+          </div>
+        
+      </div>
       
     </div>
   );

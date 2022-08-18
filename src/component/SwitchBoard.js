@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./SwitchBoard.css";
 
 export default function SwitchBoard(props) {
-  const { SwitchBoard, selectTab, data, setData } = props;
+  const { SwitchBoard, selectTab, data, setData, setControlBtn } = props;
 
   let [light, setLight] = useState(0);
   let [fan, setFan] = useState(0);
@@ -37,7 +37,7 @@ export default function SwitchBoard(props) {
   }, [light, fan, ac]);
 
   return (
-    <div >
+    <div style={{marginBottom: "4vh"}}>
       <div className="SwitchBoard-title-container">SwitchBoard {SwitchBoard + 1}</div>
       <div className="room-appliance-count">
       <div className="IMG">
