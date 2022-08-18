@@ -6,100 +6,106 @@ export default function Planselect() {
   return (
     
     <div>
-                <div className="sub-top">
-                  <p className="sub-text">
-                    Select your <br />
-                    <strong>subscription plan</strong>
-                  </p>
-                </div>
+                        <div className="addRoom-title-cont">
+        <div className="addRoom-title-inner">
+          <span
+            style={{
+
+              fontWeight: "400",
+              fontSize: "36px",
+              LineHeight: "49.18px",
+            }}
+          >
+            Select your
+
+          </span>
+          <br />
+          <span
+            style={{
+              fontWeight: "700",
+              fontSize: "36px",
+              LineHeight: "49.18px",
+            }}
+          >basic details
+          </span>
+        </div>
+      </div>
+
     {
         data.length!==0?
         data.map((e,i)=>{
             return(
+                 <div className="pack-caontainer">
+      <div className="pack-caontaine1">
+        <div className="pack-room-package">{e.top_title}</div>
+        <div className="pack-room-money-container">
+          <span className="pack-room-money-sign">₹</span>
+          <span className="pack-r00m-money-rate">{e.rs}<span style={{
+                  fontWeight:"400",
+                  fontSize:"30px",
+                  lineHeight:"40.98px",
+          }}>/day</span></span>
+        </div>
+        <div className="pack-container-description">
+        {e.bottom}
+        </div>
+        <div className="pcak-container-btn">
+          <span style={{
+            position: "absolute",
+            width: "70px",
+            height: "27px",
+            left: "36%",
+            top: "25%",
+            
+            fontFamily: 'Manrope',
+            fontStyle: "normal",
+            fontWeight: "600",
+            fontSize: "19px",
+            lineHeight: "26px",
+            
+            color: "#3052AC",
+          }}>Let's go</span>
+        </div>
+      </div>
+    </div>
                 
-                <div className="pack-caontainer" key={i}>
-                  <div className="pack-inner">
-                  <p>{e.top_title}</p>
-                  <p
-                    style={{
-                      display: "flex",
-                    }}
-                  >
-                    <div
-                      style={{
-                        paddingTop: "10px",
-                      }}
-                    >
-                      <span
-                        className="material-icons"
-                        style={{
-                          color: "#3052AC",
-                          fontSize: "34px",
-                          fontWeight: "600",
-                        }}
-                      >
-                        currency_rupee
-                      </span>
-                    </div>
-                    <div
-                      style={{
-                        color: "#3052AC",
-                        fontSize: "55px",
-                        fontWeight: "700",
-                        lineHeight: "75px",
-                      }}
-                    >
-                      {e.rs}
-                    </div>
-                  </p>
-                  <p>{e.bottom}</p>
-                  </div>
-                  <button>Let's go</button>
-                </div>
-             
-              
             )
         }):null
-    }
-    <div className="pack-caontainer" style={{backgroundColor:"#3052ac",color: "white"}}>
-                  <div className="pack-inner">
-                  <p>Make your own Package</p>
-                  <p
-                    style={{
-                      display: "flex",
-                    }}
-                  >
-                    <div
-                      style={{
-                        paddingTop: "10px",
-                      }}
-                    >
-                      <span
-                        className="material-icons"
-                        style={{
-                          color: "#3052ac",
-                          fontSize: "34px",
-                          fontWeight: "600",
-                          display:"none"
-                        }}
-                      >
-                        currency_rupee
-                      </span>
-                    </div>
-                    <div
-                      style={{
-                        color: "white",
-                        fontSize: "34px",
-                        fontWeight: "600",
-                      }}
-                    >
-                      Custom
-                    </div>
-                  </p>
-                  <p>Automate 5 lights, 1 fan, 1 tv and 1 air conditioner</p>
-                  </div>
-                  <button>Let's go</button>
-                </div>
+    } 
+    <div className="pack-caontainer" style={{marginBottom:"12%",}}>
+      <div className="pack-caontaine1" style={{
+        backgroundColor: "#3052AC",
+        
+      }}>
+        <div className="pack-room-package" style={{color:"#FFFFFF",}}>Make your own Package</div>
+        <div className="pack-room-money-container">
+        <span className="pack-r00m-money-rate" style={{left:0,color:"#FFFFFF",}}>Custom</span>
+          
+        </div>
+        <div className="pack-container-description" style={{color:"#FFFFFF",}}>
+        Automate 5 lights, 1 fan, 1 tv and 1 air conditioner
+        </div>
+        <div className="pcak-container-btn" style={{background: "#FFFFFFB2",}}>
+          <span style={{
+            position: "absolute",
+            width: "70px",
+            height: "27px",
+            left: "36%",
+            top: "25%",
+            
+            fontFamily: 'Manrope',
+            fontStyle: "normal",
+            fontWeight: "600",
+            fontSize: "19px",
+            lineHeight: "26px",
+            
+
+            color: "#3052AC",
+          }}>Let's go</span>
+        </div>
+      </div>
+    </div>
+  
      </div>
   );
 }

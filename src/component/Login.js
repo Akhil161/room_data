@@ -7,9 +7,6 @@ import "./Login.css";
 export default function Login() {
   return (
     <div>
-      {/* <div className="login-top-main">
-        <div className="login-text">Give us your<br/> <strong>basic details</strong></div>
-      </div> */}
         <div className="addRoom-title-cont">
         <div className="addRoom-title-inner">
           <span

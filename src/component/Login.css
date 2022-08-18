@@ -1,33 +1,5 @@
 @media screen and (max-width: 460px) {
-   /* .login-top{
-    background-color: #2552B2;
-    height: 23vh;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    
-   } */
-   .login-top-main {
-    position: absolute;
-    width: 100vw;
-    height: 172px;
-    top: 0px;
-    background: #2552B2;
-    border-radius: 0px 0px 31px 31px;
-}
-   .login-text{
-    position: absolute;
-width: 338px;
-height: 98px;
-left: 33px;
-top: 47px;
-font-family: 'Manrope';
-font-style: normal;
-font-weight: 400;
-font-size: 36px;
-line-height: 49px;
-
-color: #FFFFFF;
-   }
+   
   
    .input-w {
    
