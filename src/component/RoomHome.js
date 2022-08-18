@@ -125,7 +125,9 @@ export default function RoomHome() {
           </Box>
         </Fade>
       </Modal>
-
+       {
+        rooms.length>0?
+       
       <div className="addroom-bottom-container">
         <Link to="summary">
           <div className="addroom-bottom-upper1-cont">
@@ -140,7 +142,8 @@ export default function RoomHome() {
             <span className="next">Next</span>
           </div>
         </Link>
-      </div>
+      </div>:null
+}
     </div>
   );
 }

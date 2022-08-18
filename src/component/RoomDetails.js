@@ -6,11 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { saveData } from "../redux/Action";
 
 export default function RoomDetails(props) {
-  let [controlBtn,setControlBtn]=({
-    light:0,
-    fan:0,
-    ac:0
-  })
+  
+ 
+
   let [data, setdata] = useState([
     {
       roomname: "Living Room",
@@ -30,7 +28,7 @@ export default function RoomDetails(props) {
   let [selectTab, setSelectTab] = useState("Living Room");
   // let [filterRoom, setFilterRoom] = useState([]);
   const [addSwitch, setAddSwitch] = useState(false);
-
+  console.log("btn control",data[0].switchBoards[0].appliances.fans);
   // Redux
   let dispatch = useDispatch();
   const reduxData = useSelector((state) => {
@@ -213,7 +211,7 @@ export default function RoomDetails(props) {
                     data={data}
                     setData={setdata}
                     selectTab={"Living Room"}
-                    setControlBtn={setControlBtn}
+                    
                   />
                 );
               })
@@ -257,6 +255,10 @@ alignItems: "center",justifyItems:"centre"}} src={process.env.PUBLIC_URL + "/ass
           <span className="next">Next</span>
         </div> 
       </div>  */}
+
+      {
+        (data[0].switchBoards[0].appliances.fans!==0 || data[0].switchBoards[0].appliances.lightLoad!==0 || data[0].switchBoards[0].appliances.heavyLoad!==0)?
+    
       <div className="addroom-bottom-container"
       onClick={(e) => {
         e.preventDefault();
@@ -280,8 +282,8 @@ alignItems: "center",justifyItems:"centre"}} src={process.env.PUBLIC_URL + "/ass
             <span className="next">Next</span>
           </div>
         
-      </div>
-      
+      </div>:null
+}
     </div>
   );
 }

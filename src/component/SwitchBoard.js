@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react";
 import "./SwitchBoard.css";
 
 export default function SwitchBoard(props) {
-  const { SwitchBoard, selectTab, data, setData, setControlBtn } = props;
+  const { SwitchBoard, selectTab, data, setData } = props;
 
   let [light, setLight] = useState(0);
   let [fan, setFan] = useState(0);
   let [ac, setAc] = useState(0);
+  
+    
 
   const handleClick = () => {
     let appliances = {
@@ -30,10 +32,13 @@ export default function SwitchBoard(props) {
     if (newData) newData[0].switchBoards[SwitchBoard].appliances = appliances;
     setData([...newData1, ...newData]);
     console.log("handclick end    ", data);
+
+    
   };
 
   useEffect(() => {
     handleClick();
+    
   }, [light, fan, ac]);
 
   return (
