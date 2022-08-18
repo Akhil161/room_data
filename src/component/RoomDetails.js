@@ -118,6 +118,7 @@ export default function RoomDetails(props) {
 
   return (
     <div>
+      <div className="SwitchBoard-container">
       <div className="room-name-cont">
         {roomName.length !== 0
           ? roomName.map((e, i) => {
@@ -149,11 +150,11 @@ export default function RoomDetails(props) {
                       // setAddSwitch(!addSwitch);
                     }}
                     className={`room-name-btn ${
-                      e.name === "Living Room" ? "background-blue" : ""
+                      e.name === "Living Room" ? "background-blue" : ".border-colors"
                     }`}
                     key={i}
                   >
-                    {e.name}
+                    <span className="room-name-btn-txt">{e.name}</span>
                   </button>
                 </div>
               );
@@ -193,8 +194,8 @@ export default function RoomDetails(props) {
           />
         </Popover>
       </div>
-      <div className="SwitchBoard-container">
-        {data?.find((d) => {
+      <div className="swichBoard-data">
+         {data?.find((d) => {
           console.log(d.roomname);
           return d.roomname === "Living Room";
         })?.switchBoards.length !== 0
@@ -213,14 +214,15 @@ export default function RoomDetails(props) {
                 );
               })
           : null}
-      {/* </div> */}
+          </div>
+      </div>
       <div onClick={handleSwitch} className="room-add-switchBoard">
         <div className="room-add-switchBoard-icon">
         <img className="plus-img" src={process.env.PUBLIC_URL+"/assets/icon/Frame.png"} alt="add"></img>
         </div>
         <div className="room-add-switchBoard-title">Add SwitchBoard</div>
       </div>
-
+{/* 
       <div
         className="room-details-bottom-cont"
         onClick={(e) => {
@@ -230,59 +232,8 @@ export default function RoomDetails(props) {
           console.log("sandeep", newData);
           props.onClosee();
           dispatch(saveData(newData));
-        }}
-
-        // console.log("hijhg");
-        // dispatch(saveData({data}));
-        // console.log("Final Data",dataState );
-
-        //  }
-      >
-        {/* <div className="room-details-bottom-top">
-        ₹ 2000 will be charged as One Time Security at checkout
-        </div>
-         <Link to="room" style={{textDecoration: "none",color:"white"}}>
-        <div className="room-details-bottom-botCon">
-          
-            <div className="room-details-bottom-currncy">
-            <div
-              style={{
-                display: "flex",
-                
-              }}
-            >
-              <span className="material-icons" >
-                currency_rupee
-              </span>
-              <span
-                style={{
-                  fontStretch: "condensed",
-                  fontSize: "22px",
-                  marginTop: "-0.4rem",
-                  textDecoration: "none",
-                }}
-              >
-                150
-              </span>
-            </div>
-            <div
-              style={{
-                fontSize: "8px",
-              }}
-            >
-              Monthly Subscription Fee
-            </div>
-          </div>
-          
-          <div
-            style={{
-              fontSize: "1.6rem",
-            }}
-          >
-            Next
-          </div>
-        </div>
-        </Link> */}
+        }} >
+      
         <div className="addroom-bottom-upper1-cont">
           <span className="addroom-bottom-upper-cont fontSize">
             ₹ 2000 will be charged as One Time Security at checkout
@@ -292,9 +243,9 @@ export default function RoomDetails(props) {
           <span className="cuurr">₹ 150</span>
           <span className="sub sizefont">Monthly Subscription Fee</span>
           <span className="next">Next</span>
-        </div>
-      </div>
-      </div>
+        </div> 
+      </div> */}
+      
     </div>
   );
 }

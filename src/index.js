@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import './font/static/Manrope-Regular.ttf'
+import './font/static/Manrope-VariableFont_wght.ttf'
 import store from "./redux"
 import { Provider } from 'react-redux';
 

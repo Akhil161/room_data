@@ -59,7 +59,7 @@ console.log(dataState);
          <span className='addroom-room-details1'>1 x Light 1 x Fan 1 x AC</span>
          <span className='addroom-room-currenyM'>&#8377; 150</span>
       </div> */}
-      <div className='addRoom-room-detail' onClick={handleOpen}>
+      <div className='addRoom-room-cont1' onClick={handleOpen}>
          <img className='addroom-plus-icon' src={process.env.PUBLIC_URL+"/assets/icon/Frame.png"} alt="lamp"></img>
          <span className='addroom-add-room-name'>Add Room</span>
             </div>
@@ -81,43 +81,46 @@ console.log(dataState);
             scrollbarWidth:"0",
           }}
         >
-          <Fade in={open}>
+          <Fade in={open}
+          
+          >
             <Box
               sx={{
                 position:"relative",
-                marginTop:"38%",
-                width: "99.98%",
-                height: "80%",
-                // left: "0px",
-                // top: "239px",
-                
-                background: "#FFFFFF",
-                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                borderRadius: "29px 29px 0px 0px",
+          
+width: "99.99%",
+height: "60vh",
+left: "0px",
+top: "20%",
+
+
+background: "#FFFFFF",
+boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+borderRadius: "29px 29px 0px 0px",
               }}
             >
-              <div className="add-room-titl">Add Room Details</div>
-              <p className="add-room-subtitl">
+              <div className="add-room-title-container">Add Room Details</div>
+              <div className="add-room-subtitle-conainer">
                 Add the rooms, and the switchboards in it & the appliances they
                 control
-              </p>
-              <div className="room-name">
-                <RoomDetails onClosee={handleClose}/>
               </div>
+               <div className="room-name">
+                <RoomDetails onClosee={handleClose}/>
+              </div> 
             </Box>
           </Fade>
         </Modal>
       
-      <div className='addroom-bottom-container'>
+       <div className='addroom-bottom-container'>
       <Link to="summary">
-        <div className='addroom-bottom-upper1-cont'><span className='addroom-bottom-upper-cont'>₹ 4000 will be charged as One Time Security at checkout</span></div>
+        <div className='addroom-bottom-upper1-cont'>₹ 4000 <span style={{fontWeight:"400"}}>will be charged as One Time Security at checkout</span></div>
         <div className='addroom-bottom-upper2-cont'>
           <span className='cuurr'>₹ 300</span>
           <span className='sub '>Monthly Subscription Fee</span>
           <span className='next'>Next</span>
         </div>
         </Link>
-      </div>
+      </div> 
       
     </div>
   )
