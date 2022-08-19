@@ -100,10 +100,12 @@ export default function RoomDetails(props) {
   };
   const handleDelete = async (i) => {
     const newData = [...data];
-    newData[0].switchBoards = newData[0].switchBoards.filter((e, index) => index !== i).map((e,index)=>{
-      return {...e,switchboardNumber:index+1}
-    })
-    setdata(newData)
+    newData[0].switchBoards = newData[0].switchBoards
+      .filter((e, index) => index !== i)
+      .map((e, index) => {
+        return { ...e, switchboardNumber: index + 1 };
+      });
+    setdata(newData);
   };
 
   const open = Boolean(anchorEl);
@@ -111,7 +113,18 @@ export default function RoomDetails(props) {
 
   return (
     <div>
-      <div className="SwitchBoard-container">
+      <div
+        className="SwitchBoard-container"
+        style={{
+          maxHeight: `${
+            data[0].switchBoards[0].appliances.fans !== 0 ||
+            data[0].switchBoards[0].appliances.lightLoad !== 0 ||
+            data[0].switchBoards[0].appliances.heavyLoad !== 0
+              ? "45vh"
+              : "60vh"
+          }`,
+        }}
+      >
         <div className="room-name-cont">
           {roomName.length !== 0
             ? roomName.map((e, i) => {
@@ -278,6 +291,8 @@ export default function RoomDetails(props) {
       {data[0].switchBoards[0].appliances.fans !== 0 ||
       data[0].switchBoards[0].appliances.lightLoad !== 0 ||
       data[0].switchBoards[0].appliances.heavyLoad !== 0 ? (
+        // let a =document.getElementById(MaxHeight);
+
         <div
           className="addroom-bottom-container"
           onClick={(e) => {

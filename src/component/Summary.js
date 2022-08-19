@@ -80,6 +80,13 @@ export default function Summary() {
               </div>
             </div>
           </div>
+          <div className='summary-room-offer-discount-container'>
+              <div className='summary-room-offer-discount-title'>Offers and Discount</div>
+              <div className='summary-room-offer-discount-main-container'>
+                <div className='summary-room-offer-discount-main-container-money'>₹199 total savings</div>
+                <div className='summary-room-offer-discount-main-container-promocode'>with TRYNEW coupon</div>
+              </div>
+          </div>
     </>
   )
 }

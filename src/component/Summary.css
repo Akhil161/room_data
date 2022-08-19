@@ -119,9 +119,7 @@
   color: #000000;
 
 }
-.summary-room-frequantBuy-title{
-  
-}
+
 .summary-room-frequantBuy-product{
   display: flex;
   
@@ -216,5 +214,14 @@ vertical-align: middle;
 line-height: 21px;
 
 color: #000000;
+}
+.summary-room-offer-discount-container{
+      width: 100%;
+      margin-top: 5%;
+}
+.summary-room-offer-discount-title{
+  position: relative;
+  width: 90%;
+  left:10%
 }
 }
