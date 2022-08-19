@@ -221,7 +221,184 @@ color: #000000;
 }
 .summary-room-offer-discount-title{
   position: relative;
+  width: fit-content;
+  left:8%;
+  font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 23px;
+margin-bottom: 5%;
+
+color: #000000;
+}
+.summary-room-offer-discount-main-container{
+  position: relative;
   width: 90%;
-  left:10%
+  left:5%;
+  height: 81px;
+  background: linear-gradient(269.93deg, #189E71 -18.76%, rgba(24, 158, 113, 0.609375) 23.38%, rgba(24, 158, 113, 0.257671) 69.25%, rgba(24, 158, 113, 0.0767225) 100.23%, rgba(24, 158, 113, 0) 100.24%);
+filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+border-radius: 12px;
+}
+.summary-room-offer-discount-main-container-money{
+  position: absolute;
+width: fit-content;
+height: 23px;
+left: 3%;
+top: 25%;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 30px;
+
+color: #267245;
+}
+.summary-room-offer-discount-main-container-promocode{
+  position: absolute;
+width: fit-content;
+height: 23px;
+left: 3%;
+top: 58%;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+
+color: #267245;
+}
+.summary-room-installation-main-container{
+  position: relative;
+  width: 90%;
+  left:5%;
+  height: 81px;
+  background: linear-gradient(270.02deg, #3052AC -10.99%, rgba(179, 192, 225, 0.365562) 101.56%, rgba(210, 217, 237, 0.21875) 101.57%, rgba(255, 255, 255, 0) 101.58%);
+filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+border-radius: 12px;
+}
+.summary-room-offer-installion-main-container-promocode{
+  position: absolute;
+width: fit-content;
+height: 23px;
+left: 3%;
+top: 25%;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+
+color: #3052AC;
+}
+.summary-room-offer-installion-main-container-money{
+  position: absolute;
+width: fit-content;
+height: 23px;
+left: 3%;
+top: 48%;
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 30px;
+
+color: #3052AC;
+}
+.summary-room-bill-details-container{
+  width: 100%;
+}
+.summary-room-bill-details-container-inner{
+  position: relative;
+  width: 90%;
+  left:5%;
+  background: #FFFFFF;
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+border-radius: 12px;
+padding-bottom: 2%;
+
+}
+.summary-room-bill-details-container-inner-upper{
+  position: relative;
+  width: 92%;
+  left:3%;
+  top:1.5vh;
+}
+.summary-room-bill-details-container-inner-upper-bills{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.summary-room-bill-details-container-inner-upper-bills .inner,
+.summary-room-bill-details-container-line-cont-details .inner{
+  font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 17px;
+line-height: 23px;
+
+color: #000000;
+}
+.summary-room-bill-details-container-inner-upper-bills .inner1,
+.summary-room-bill-details-container-line-cont-details .inner1{
+  
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 20px;
+text-align: right;
+
+color: #000000;
+}
+.hr{
+  /* border: 1px dashed #A8A8A8; */
+   /* border:none;
+   height: 1px;
+   background: #A8A8A8;
+   background: repeating-linear-gradient(900deg,#A8A8A8,#A8A8A8 10px, transparent 10px, transparent 50px ); */
+
+   /* border:none;
+   border-top:1px  dashed #f00;
+   color:#fff;
+   background-color:#fff;
+   height:1px;
+   width:100%; */
+}
+.line {
+  margin: 2px 0;
+  height: 1.5px;
+  background: repeating-linear-gradient(
+    to left,
+    transparent,
+    transparent 10px,
+    #A8A8A8 10px,
+    #A8A8A8 20px
+  );
+  /*10px transparent then 10px black -> repeat this!*/
+}
+.summary-room-bill-details-container-line-cont{
+  margin-top: 7%;
+  margin-left: 3%;
+  
+}
+.summary-room-bill-details-container-line-cont-details{
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+.pay-to-inner{
+  font-family: 'Manrope';
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 25px;
+
+color: #000000;
 }
 }
