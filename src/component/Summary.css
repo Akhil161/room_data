@@ -1,5 +1,5 @@
 @media screen and (max-width: 460px) {
-  .summary-d-c {
+  /* .summary-d-c {
     position: relative;
     width: 100vw;
     height: 1829px;
@@ -7,9 +7,10 @@
     top: 0px;
     border-radius: 0px;
     background: #ffffff;
-  }
+  } */
   .summary-title-cont {
-    margin-bottom: 5%;
+    position: relative;
+    margin-bottom: 3%;
     width: 100vw;
     height: 172px;
     
@@ -32,15 +33,17 @@
     color: #ffffff;
   }
   .summary-rooms-cont {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background-color: aquamarine;
     
-    width: 345px;
-    height: 14%;
-    margin: auto;
     
   }
   .summary-rooms-inner-cont {
     position: absolute;
-    width: 345px;
+    width: 90%;
+    left: 5%;
     height: fit-content;
     /* left: 22px;
 top: 200px; */
@@ -50,7 +53,7 @@ top: 200px; */
     border-radius: 12px;
   }
   .summary-room-details {
-    position: relative;
+    position: absolute;
     margin-top: 2%;
     height: 6vh;
     
@@ -72,11 +75,11 @@ top: 200px; */
   width: 55px;
   height: 15px;
   left: 3%;
-  top: 52%;
+  top: 58%;
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 15px;
   color: #747474;
 }
@@ -96,21 +99,24 @@ top: 200px; */
   color: #000000;
 }
 .summary-room-frequantBuy-conyainer{
-  margin: auto;
-  width: 345px;
+  position: relative;
+  width: 100%;
+  
+  
 }
 .summary-room-frequantBuy-tit {
-  width: 231px;
+  position: absolute;
+  width: 90%;
   height: 23px;
-  left: 33px;
-  top: 439px;
+  left: 5%;
+  top: 0px;
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 400;
   font-size: 19px;
   line-height: 23px;
   color: #000000;
-  margin-bottom: 5vh;
+
 }
 .summary-room-frequantBuy-title{
   

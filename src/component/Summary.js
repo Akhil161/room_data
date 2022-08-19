@@ -3,7 +3,7 @@ import './Summary.css'
 
 export default function Summary() {
   return (
-    <div className='summary-d-c'>
+    <div >
         <div className="summary-title-cont">
         <div className="summary-title-inner">
           <span style={{
@@ -38,14 +38,29 @@ export default function Summary() {
                 <span className='summary-room-money'>₹ 150</span>
              </div>
              <div className='summary-room-details'>
+                <span className='summary-room-name'>Living Room</span>
+                <span className='summary-room-cutomize'>Customize</span>
+                <span className='summary-room-money'>₹ 150</span>
+             </div>
+             <div className='summary-room-details'>
                 <span className='summary-room-name'>Dinving Room</span>
                 <span className='summary-room-cutomize'>Customize</span>
                 <span className='summary-room-money'>₹ 150</span>
              </div>
+             <div className='summary-room-details'>
+                <span className='summary-room-name'>Living Room</span>
+                <span className='summary-room-cutomize'>Customize</span>
+                <span className='summary-room-money'>₹ 150</span>
+             </div>
+             {/* <div className='summary-room-details'>
+                <span className='summary-room-name'>Dinving Room</span>
+                <span className='summary-room-cutomize'>Customize</span>
+                <span className='summary-room-money'>₹ 150</span>
+             </div> */}
           </div>
        </div>
        
-       <div className='summary-room-frequantBuy-conyainer'>
+       {/* <div className='summary-room-frequantBuy-conyainer'>
             <div className='summary-room-frequantBuy-tit'>
               <span className='summary-room-frequantBuy-title'>Frequently Brought Together</span>
             </div>
@@ -62,7 +77,7 @@ export default function Summary() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
     </div>
   )
 }
