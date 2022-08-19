@@ -149,6 +149,19 @@ export default function Summary() {
         </div>
         </div>
       </div>
+      <div className="summary-room-offer-discount-container">
+        <div className="summary-room-offer-discount-title">
+          Payment Plans
+        </div>
+        <div className="summary-roam-payment-plan-conainer">
+          <div>Monthly</div>
+          <div>
+            <div>Get a better plan xD</div>
+            <div>0 Days Free!</div>
+          </div>
+          <div>₹ 600/m</div>
+        </div>
+        </div>
     </>
   );
 }
