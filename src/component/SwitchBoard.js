@@ -9,6 +9,13 @@ export default function SwitchBoard(props) {
   let [fan, setFan] = useState(0);
   let [ac, setAc] = useState(0);
   
+  useEffect(()=>{
+        let newData=data[0].switchBoards[SwitchBoard].appliances
+        console.log("useeffect hg",newData);
+        setAc(newData.heavyLoad)
+        setFan(newData.fans)
+        setLight(newData.lightLoad)
+  },[data,SwitchBoard])
     
 
   const handleClick = () => {
@@ -40,7 +47,7 @@ export default function SwitchBoard(props) {
     handleClick();
     
   }, [light, fan, ac]);
-
+console.log("switch baotdghgfff",data);
   return (
     <div style={{marginBottom: "4vh"}}>
       <div className="SwitchBoard-title-container">SwitchBoard {SwitchBoard + 1}</div>

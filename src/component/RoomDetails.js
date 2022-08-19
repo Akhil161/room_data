@@ -1,14 +1,12 @@
 import { Popover } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./RoomDetails.css";
 import SwitchBoard from "./SwitchBoard";
 import { useDispatch, useSelector } from "react-redux";
 import { saveData } from "../redux/Action";
 
 export default function RoomDetails(props) {
-  
- 
-
+  let [reapper, setReapper] = useState(false);
   let [data, setdata] = useState([
     {
       roomname: "Living Room",
@@ -28,7 +26,7 @@ export default function RoomDetails(props) {
   let [selectTab, setSelectTab] = useState("Living Room");
   // let [filterRoom, setFilterRoom] = useState([]);
   const [addSwitch, setAddSwitch] = useState(false);
-  console.log("btn control",data[0].switchBoards[0].appliances.fans);
+  console.log("btn control", data[0].switchBoards[0].appliances.fans);
   // Redux
   let dispatch = useDispatch();
   const reduxData = useSelector((state) => {
@@ -110,8 +108,21 @@ export default function RoomDetails(props) {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = async () => {
     setAnchorEl(null);
+  };
+  const handleDelete = async (i) => {
+    console.log("i=", i);
+    let deletedData = data[0].switchBoards[i];
+    console.log("deletrguhg    ", deletedData);
+    data[0].switchBoards = data[0].switchBoards.filter((e) => {
+      return e !== deletedData;
+    }).map((e,i)=>{
+         return {...e,switchboardNumber:i+1}
+    })
+
+    console.log("data afre delet", data);
+    await setReapper(!reapper);
   };
 
   const open = Boolean(anchorEl);
@@ -120,120 +131,146 @@ export default function RoomDetails(props) {
   return (
     <div>
       <div className="SwitchBoard-container">
-      <div className="room-name-cont">
-        {roomName.length !== 0
-          ? roomName.map((e, i) => {
-              return (
-                <div>
-                  <button
-                    onClick={() => {
-                      let btn = document.querySelectorAll(".room-name-btn");
-                      console.log(btn);
-                      btn.forEach((ele) => {
-                        ele.classList.remove("background-blue");
-                      });
-                      btn[i].classList.add("background-blue");
-
-                      // let newData = data;
-                      // newData = newData.filter((e) => {
-                      //   return e.roomId === i;
-                      // });
-
-                      // setdata(
-                      //   newData.length > 0
-                      //     ? data
-                      //     : [
-                      //         ...data,
-                      //         { roomname: e.name, roomId: i, switchBoards: [] },
-                      //       ]
-                      // );
-                      setSelectTab(e.name);
-                      // setAddSwitch(!addSwitch);
-                    }}
-                    className={`room-name-btn ${
-                      e.name === "Living Room" ? "background-blue" : ".border-colors"
-                    }`}
-                    key={i}
-                  >
-                    <span className="room-name-btn-txt">{e.name}</span>
-                  </button>
-                </div>
-              );
-            })
-          : null}
-        <div>
-          <button
-            className="room-name-btn"
-            aria-describedby={id}
-            onClick={handleClick}
-          >
-            Custom
-          </button>
-        </div>
-        <Popover
-          sx={{
-            borderRadius: 25,
-            width: "35vw",
-          }}
-          id={id}
-          open={open}
-          anchorEl={anchorEl}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "left",
-          }}
-        >
-          <input
-            className="input-roomName"
-            type="text"
-            placeholder="Room name"
-            onBlur={(e) => {
-              const Rname = e.target.value;
-              setRoomName([...roomName, { name: Rname }]);
-            }}
-          />
-        </Popover>
-      </div>
-      <div className="swichBoard-data">
-         {data?.find((d) => {
-          console.log(d.roomname);
-          return d.roomname === "Living Room";
-        })?.switchBoards.length !== 0
-          ? data
-              ?.find((d) => {
-                return d.roomname === "Living Room";
-              })
-              ?.switchBoards.map((e, i) => {
+        <div className="room-name-cont">
+          {roomName.length !== 0
+            ? roomName.map((e, i) => {
                 return (
-                  <SwitchBoard
-                    SwitchBoard={i}
-                    data={data}
-                    setData={setdata}
-                    selectTab={"Living Room"}
-                    
-                  />
+                  <div>
+                    <button
+                      onClick={() => {
+                        let btn = document.querySelectorAll(".room-name-btn");
+                        console.log(btn);
+                        btn.forEach((ele) => {
+                          ele.classList.remove("background-blue");
+                        });
+                        btn[i].classList.add("background-blue");
+
+                        // let newData = data;
+                        // newData = newData.filter((e) => {
+                        //   return e.roomId === i;
+                        // });
+
+                        // setdata(
+                        //   newData.length > 0
+                        //     ? data
+                        //     : [
+                        //         ...data,
+                        //         { roomname: e.name, roomId: i, switchBoards: [] },
+                        //       ]
+                        // );
+                        setSelectTab(e.name);
+                        // setAddSwitch(!addSwitch);
+                      }}
+                      className={`room-name-btn ${
+                        e.name === "Living Room"
+                          ? "background-blue"
+                          : ".border-colors"
+                      }`}
+                      key={i}
+                    >
+                      <span className="room-name-btn-txt">{e.name}</span>
+                    </button>
+                  </div>
                 );
               })
-          : null}
+            : null}
+          <div>
+            <button
+              className="room-name-btn"
+              aria-describedby={id}
+              onClick={handleClick}
+            >
+              Custom
+            </button>
           </div>
-    
-      {/* <div onClick={handleSwitch} className="room-add-switchBoard">
+          <Popover
+            sx={{
+              borderRadius: 25,
+              width: "35vw",
+            }}
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+          >
+            <input
+              className="input-roomName"
+              type="text"
+              placeholder="Room name"
+              onBlur={(e) => {
+                const Rname = e.target.value;
+                setRoomName([...roomName, { name: Rname }]);
+              }}
+            />
+          </Popover>
+        </div>
+        <div className="swichBoard-data">
+          {data?.find((d) => {
+            console.log(d.roomname);
+            return d.roomname === "Living Room";
+          })?.switchBoards.length !== 0
+            ? data
+                ?.find((d) => {
+                  return d.roomname === "Living Room";
+                })
+                ?.switchBoards.map((e, i) => {
+                  return (
+                    <>
+                      <button
+                        ids={i + 1}
+                        onClick={(e) => {
+                          handleDelete(i);
+                        }}
+                      >
+                        x
+                      </button>
+                      <SwitchBoard
+                        SwitchBoard={i}
+                        data={data}
+                        setData={setdata}
+                        selectTab={"Living Room"}
+                      />
+                    </>
+                  );
+                })
+            : null}
+        </div>
+
+        {/* <div onClick={handleSwitch} className="room-add-switchBoard">
         <div className="room-add-switchBoard-icon">
         <img className="plus-img" src={process.env.PUBLIC_URL+"/assets/icon/Frame.png"} alt="add"></img>
         </div>
         <div className="room-add-switchBoard-title">Add SwitchBoard</div>
       </div> */}
-      <div style={{width:"100%"}}>
-        <div  onClick={handleSwitch} className="room-appliance-count" style={{width:"90%",left:"5%",top:0,}}>
-      <div className="IMG">
-          <img style={{height:"14.98px",width:"14.06px",display: "flex",
-alignItems: "center",justifyItems:"centre"}} src={process.env.PUBLIC_URL + "/assets/icon/Frame.png"} alt="plus"></img>
+        <div style={{ width: "100%" }}>
+          <div
+            onClick={handleSwitch}
+            className="room-appliance-count"
+            style={{ width: "90%", left: "5%", top: 0 }}
+          >
+            <div className="IMG">
+              <img
+                style={{
+                  height: "14.98px",
+                  width: "14.06px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyItems: "centre",
+                }}
+                src={process.env.PUBLIC_URL + "/assets/icon/Frame.png"}
+                alt="plus"
+              ></img>
+            </div>
+            <div className="SwitchBoard-appliance-name-text">
+              Add SwitchBoard
+            </div>
           </div>
-          <div className="SwitchBoard-appliance-name-text">Add SwitchBoard</div>
-    </div>
-    </div>
-    </div>
+        </div>
+      </div>
       {/* <div
         className="room-details-bottom-cont"
         onClick={(e) => {
@@ -257,20 +294,20 @@ alignItems: "center",justifyItems:"centre"}} src={process.env.PUBLIC_URL + "/ass
         </div> 
       </div>  */}
 
-      {
-        (data[0].switchBoards[0].appliances.fans!==0 || data[0].switchBoards[0].appliances.lightLoad!==0 || data[0].switchBoards[0].appliances.heavyLoad!==0)?
-    
-      <div className="addroom-bottom-container"
-      onClick={(e) => {
-        e.preventDefault();
-        let newData = data;
-        newData[0].roomname = selectTab;
-        console.log("sandeep", newData);
-        props.onClosee();
-        dispatch(saveData(newData));
-      }}
-      >
-        
+      {data[0].switchBoards[0].appliances.fans !== 0 ||
+      data[0].switchBoards[0].appliances.lightLoad !== 0 ||
+      data[0].switchBoards[0].appliances.heavyLoad !== 0 ? (
+        <div
+          className="addroom-bottom-container"
+          onClick={(e) => {
+            e.preventDefault();
+            let newData = data;
+            newData[0].roomname = selectTab;
+            console.log("sandeep", newData);
+            props.onClosee();
+            dispatch(saveData(newData));
+          }}
+        >
           <div className="addroom-bottom-upper1-cont">
             ₹ 2000{" "}
             <span style={{ fontWeight: "400" }}>
@@ -282,9 +319,8 @@ alignItems: "center",justifyItems:"centre"}} src={process.env.PUBLIC_URL + "/ass
             <span className="sub ">Monthly Subscription Fee</span>
             <span className="next">Next</span>
           </div>
-        
-      </div>:null
-}
+        </div>
+      ) : null}
     </div>
   );
 }
