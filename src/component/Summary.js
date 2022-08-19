@@ -67,15 +67,15 @@ export default function Summary() {
             <div className='summary-room-frequantBuy-product'>
               <div className='summary-room-frequantBuy-product-img'>
                 <div>
-                <img style={{width:"145px"}} src={process.env.PUBLIC_URL+"/assets/img/remote.png"} alt="remote"></img>
+                <img  src={process.env.PUBLIC_URL+"/assets/img/remote.png"} alt="remote"></img>
                 </div>
               </div>
-              <div>
-                <span>Universal Remote</span>
-                <span>Control a room’s remotes smartly & via your voice</span>
-                <div>
-                  <span>₹ 60/m</span>
-                  <span>Add</span>
+              <div className='summary-room-frequentBuy-inner-cont'>
+                <div className='summary-room-frequentBuy-inner-title'>Universal Remote</div>
+                <div className="summary-room-frequentBuy-inner-subtitle">Control a room’s remotes smartly & via your voice</div>
+                <div className='summary-room-frequentBuy-inner-bottom'>
+                  <div className='summary-room-frequentBuy-inner-bottom-perMonth'>₹ 60/m</div>
+                  <div className='summary-room-frequentBuy-inner-bottom-btn'>Add</div>
                 </div>
               </div>
             </div>

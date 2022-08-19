@@ -36,7 +36,7 @@
     margin-top: 8%;
     width: 100vw;
     height: fit-content;
-    background-color: aquamarine;
+    
     
     
   }
@@ -134,10 +134,87 @@
 }
 .summary-room-frequantBuy-product-img{
       display: flex;
+      
       align-items: center;
+      justify-content: center;
+       
       width: 40%;
+      background: rgba(48, 82, 172, 0.25);
+border-radius: 12px 0px 0px 12px;
+
+      
 }
-.summary-room-frequantBuy-product-img div{
-  width: 15px;
+.summary-room-frequentBuy-inner-cont{
+  width: 60%;
+}
+
+.summary-room-frequentBuy-inner-title{
+  position: relative;
+  width: 80%;
+  
+  height: 23px;
+  left:10%;
+  top: 8%;
+  
+  
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 23px;
+  
+  color: #000000;
+}
+.summary-room-frequentBuy-inner-subtitle{
+  position: relative;
+  width: 80%;
+  width: 155px;
+  height: 23px;
+  left:10%;
+  top: 12%;
+  font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 15px;
+
+color: #747474;
+}
+.summary-room-frequentBuy-inner-bottom{
+  position: relative;
+  width: 70%;
+  height: 23px;
+  left:10%;
+  top: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+.summary-room-frequentBuy-inner-bottom-perMonth{
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  
+  color: #000000;
+}
+.summary-room-frequentBuy-inner-bottom-btn{
+  width: 72px;
+  height: 22px;
+  left: 255px;
+  top: 556px;
+  text-align: center;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+
+  font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+vertical-align: middle;
+line-height: 21px;
+
+color: #000000;
 }
 }
