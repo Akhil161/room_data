@@ -11,7 +11,7 @@
   .summary-title-cont {
     position: relative;
     margin-bottom: 3%;
-    width: 100vw;
+    width: 100%;
     height: 172px;
     
 
@@ -20,9 +20,9 @@
   }
   .summary-title-inner {
     position: absolute;
-    width: 338px;
+    width: 90%;
     height: 98px;
-    left: 33px;
+    left: 7%;
     top: 47px;
 
     font-style: normal;
@@ -33,37 +33,37 @@
     color: #ffffff;
   }
   .summary-rooms-cont {
-    position: relative;
-    width: 100%;
+    margin-top: 8%;
+    width: 100vw;
     height: fit-content;
     background-color: aquamarine;
     
     
   }
   .summary-rooms-inner-cont {
-    position: absolute;
+    position: relative;
     width: 90%;
     left: 5%;
     height: fit-content;
-    /* left: 22px;
-top: 200px; */
-
+    margin-bottom: 5vh;
+    padding: 4% 0%;
     background: #ffffff;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
   }
   .summary-room-details {
-    position: absolute;
-    margin-top: 2%;
+    position: relative;
+    
     height: 6vh;
+    
     
   }
   .summary-room-name {
     position: absolute;
     width: fit-content;
     height: 23px;
-    left: 3%;
-    top: 13%;
+    left: 5%;
+    top:15%;
     font-style: normal;
     font-weight: 600;
     font-size: 17px;
@@ -73,9 +73,10 @@ top: 200px; */
 .summary-room-cutomize {
   position: absolute;
   width: 55px;
+  background-image: u;
   height: 15px;
-  left: 3%;
-  top: 58%;
+  left: 5%;
+  top:60%;
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 400;
@@ -87,9 +88,8 @@ top: 200px; */
   position: absolute;
   width: 52px;
   height: 21px;
-  
-  right: 5%;
-  top: 21%;
+  top:20%;
+  right:5%;
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 600;
@@ -99,17 +99,18 @@ top: 200px; */
   color: #000000;
 }
 .summary-room-frequantBuy-conyainer{
-  position: relative;
+  
   width: 100%;
   
   
 }
 .summary-room-frequantBuy-tit {
-  position: absolute;
+  position: relative;
   width: 90%;
   height: 23px;
   left: 5%;
   top: 0px;
+  margin-bottom: 5%;
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 400;
@@ -122,15 +123,21 @@ top: 200px; */
   
 }
 .summary-room-frequantBuy-product{
-  width: 345px;
-  height: 107px;
-  left: 22px;
-  top: 483px;
+  display: flex;
   
+  height: 107px;
+  width: 90%;
+  margin-left: 5%;
   background: #FFFFFF;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
 }
 .summary-room-frequantBuy-product-img{
+      display: flex;
+      align-items: center;
+      width: 40%;
+}
+.summary-room-frequantBuy-product-img div{
+  width: 15px;
 }
 }
