@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { saveData } from "../redux/Action";
 
 export default function RoomDetails(props) {
-  let [reapper, setReapper] = useState(false);
   let [data, setdata] = useState([
     {
       roomname: "Living Room",
@@ -24,19 +23,8 @@ export default function RoomDetails(props) {
     },
   ]);
   let [selectTab, setSelectTab] = useState("Living Room");
-  // let [filterRoom, setFilterRoom] = useState([]);
   const [addSwitch, setAddSwitch] = useState(false);
-  console.log("btn control", data[0].switchBoards[0].appliances.fans);
-  // Redux
   let dispatch = useDispatch();
-  const reduxData = useSelector((state) => {
-    return state.sar;
-  });
-
-  console.log("reduxData", reduxData);
-
-  console.log("At  ", data);
-  console.log(selectTab);
   function handleSwitch() {
     let roomNamme = [...data].filter((e) => {
       return e.roomname === "Living Room";
@@ -45,7 +33,6 @@ export default function RoomDetails(props) {
       return e.roomname !== "Living Room";
     });
 
-    console.log("roomNamme", roomNamme);
     if (roomNamme[0]) {
       console.log(roomNamme);
       roomNamme[0].switchBoards = [
@@ -112,17 +99,11 @@ export default function RoomDetails(props) {
     setAnchorEl(null);
   };
   const handleDelete = async (i) => {
-    console.log("i=", i);
-    let deletedData = data[0].switchBoards[i];
-    console.log("deletrguhg    ", deletedData);
-    data[0].switchBoards = data[0].switchBoards.filter((e) => {
-      return e !== deletedData;
-    }).map((e,i)=>{
-         return {...e,switchboardNumber:i+1}
+    const newData = [...data];
+    newData[0].switchBoards = newData[0].switchBoards.filter((e, index) => index !== i).map((e,index)=>{
+      return {...e,switchboardNumber:index+1}
     })
-
-    console.log("data afre delet", data);
-    await setReapper(!reapper);
+    setdata(newData)
   };
 
   const open = Boolean(anchorEl);
