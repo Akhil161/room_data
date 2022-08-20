@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import "./Planselect.css";
 import {data} from "./Object"
 
@@ -85,6 +86,7 @@ export default function Planselect() {
         <div className="pack-container-description" style={{color:"#FFFFFF",}}>
         Automate 5 lights, 1 fan, 1 tv and 1 air conditioner
         </div>
+        <Link to="room">
         <div className="pcak-container-btn" style={{background: "#FFFFFFB2",}}>
           <span style={{
             position: "absolute",
@@ -103,6 +105,7 @@ export default function Planselect() {
             color: "#3052AC",
           }}>Let's go</span>
         </div>
+        </Link>
       </div>
     </div>
   

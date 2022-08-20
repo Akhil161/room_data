@@ -1,4 +1,5 @@
 @media screen and (max-width: 435px) {
+
    .getstarted-main-img-container{
     position: relative;
     width: 100%;
@@ -16,4 +17,78 @@ top:15%;
    .getstarted-main-img-img img{
     width: 100%;
    }
+   .main-slider-cont{
+       position: relative;
+       top: 2.5vh;
+   }
+   .slider-text{
+      width: 306px;
+height: 50px;
+text-align: center;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 49px;
+/* identical to box height */
+
+
+color: #000000;
+   }
+   .inner-text-slider{
+      font-weight: 700;
+   }
+   .getting-started-inner-text{
+      position: relative;
+      width: 80%;
+      left:10%; 
+      height: 22vh;
+top: 1.5vh;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+text-align: center;
+
+color: #747474;
+   }
+   .getting-slider-btn-container{
+      position: absolute;
+      top: 88%;
+   }
+   .getting-started-btn-container{
+      position: fixed;
+      bottom: 2.5vh;
+      width: 100%;
+      height: 55px;
+      
+  }
+  .getting-stared-btn{
+     position: absolute;
+     width: 90%;
+     left: 5%;
+     
+     height: 55px;
+     
+     background: #2552B2;
+     
+  
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  }
+  .getting-stared-btn-text{
+      position: absolute;
+      font-family: 'Manrope';
+      left:37%;
+      top:25%;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  color: #FFFFFF;
+
+  
+  }
 }

@@ -14,13 +14,15 @@ function App() {
      <div className='font-face-gm'>
         <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />}/>
-        <Route index element={<Login />} />
-        <Route path="plan" element={<Planselect />} />
-        <Route path="get" element={<Getstarted />} />
+      <Route path="login"  element={<Login />} />
+      <Route path="/" element={<Getstarted />}/>
+        <Route index element={<Getstarted />} />
+       
+        <Route path="login/plan" element={<Planselect />} />
+    
         
-        <Route path="room" element={<RoomHome />} />
-        <Route path="room/summary" element={<Summary />} />
+        <Route path="login/plan/room" element={<RoomHome />} />
+        <Route path="login/plan/room/summary" element={<Summary />} />
 
          
       
