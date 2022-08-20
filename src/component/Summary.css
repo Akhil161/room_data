@@ -1,30 +1,18 @@
 @media screen and (max-width: 460px) {
-  /* .summary-d-c {
-    position: relative;
-    width: 100vw;
-    height: 1829px;
-    left: 0px;
-    top: 0px;
-    border-radius: 0px;
-    background: #ffffff;
-  } */
+  
   .summary-title-cont {
-    position: relative;
-    margin-bottom: 5%;
     width: 100%;
-    height: 158px;
-    
-
+    height: 152px;
     background: #3052ac;
     border-radius: 0px 0px 31px 31px;
   }
   .summary-title-inner {
     position: absolute;
-    width: 90%;
+    width: fit-content;
     height: 98px;
-    left: 7%;
-    top: 47px;
-
+    margin-left: 10%;
+    padding-top: 7%;
+    font-family: "Manrope";
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
@@ -218,6 +206,7 @@ color: #000000;
 .summary-room-offer-discount-container{
       width: 100%;
       margin-top: 5%;
+      
 }
 .summary-room-offer-discount-title{
   position: relative;
@@ -389,6 +378,151 @@ line-height: 25px;
 color: #000000;
 }
 .summary-roam-payment-plan-conainer{
+  position: relative;
+  width: 90%;
+  left: 5%;
+  height: 81px;
+  background: #FFFFFF;
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+border-radius: 12px;
+
+    margin-bottom: 7%;
+}
+.summary-roam-payment-plan-conainer-time{
+  position: absolute;
+  display: flex;
+  top: 31%;
+  font-family: 'Manrope';
+  left:3%;
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+
+color: #000000;
+}
+.summary-roam-payment-plan-conainer-middle{
+  position: absolute;
+  width: 84px;
+height: 32px;
+left:40%;
+top: 28%;
+}
+.summary-roam-payment-plan-conainer-middle-upper{
+  width: 84px;
+  height: 11px;
   
+  background: rgba(48, 82, 172, 0.81);
+  border-radius: 4px 4px 0px 0px;
+
+  font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 7px;
+line-height: 11px;
+text-align: center;
+vertical-align: middle;
+color: #FFFFFF;
+}
+.summary-roam-payment-plan-conainer-middle-bottom{
+  width: 84px;
+  height: 21px;
+  
+  background: #77BA80;
+  border-radius: 0px 0px 4px 4px;
+
+  font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 11px;
+line-height: 15px;
+/* identical to box height */
+text-align: center;
+padding-top: 2%;
+
+color: #FFFFFF;
+}
+.summary-roam-payment-plan-conainer-bottom-rs{
+ position: absolute; 
+height: 23px;
+right: 5%;
+bottom: 35%;
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+
+color: #3052AC;
+}
+.summary-roam-payment-page-payment-container{
+  position: fixed;
+  height: 13%;
+  bottom: 0;
+  width: 100%;
+  background: #FFFFFF;
+  ;
+}
+.bottom-line{
+  position: absolute;
+  width: 390px;
+  height: 0px;
+  left: 0px;
+  top: 0px;
+  border: 0.5px solid #A8A8A8;
+}
+.summary-roam-payment-page-payment-container-rs{
+  position: absolute;
+  left: 9.23%;
+
+top: 31%;
+bottom: 3.28%;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+
+color: #000000;
+}
+.summary-roam-payment-page-payment-container-details{
+  position: absolute;
+left: 9.23%;
+
+top: 58%;
+
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 10px;
+line-height: 14px;
+
+color: #3052AC;
+}
+.summary-roam-payment-page-payment-container-btn{
+  position: absolute;
+  width: 50vw;
+  height: 55px;
+  right: 5%;
+  top: 21%;
+  
+  background: #3052AC;
+  border-radius: 10px;
+
+
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 55px;
+text-align: center;
+vertical-align: middle;
+color: #FFFFFF;
+}
+.marginBottom{
+  margin-bottom: 32%;
 }
 }

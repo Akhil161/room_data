@@ -50,7 +50,7 @@ export default function SwitchBoard(props) {
 console.log("switch baotdghgfff",data);
   return (
     <div style={{marginBottom: "4vh"}}>
-      <div className="SwitchBoard-title-container">SwitchBoard {SwitchBoard + 1}</div>
+      {/* <div className="SwitchBoard-title-container">SwitchBoard {SwitchBoard + 1}</div> */}
       <div className="room-appliance-count">
       <div className="IMG">
           <img style={{height:"17.54px",width:"11.24px",display: "flex",

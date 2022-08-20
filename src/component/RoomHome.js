@@ -95,10 +95,11 @@ export default function RoomHome() {
         BackdropProps={{
           timeout: 500,
         }}
-        className="model"
+        
         sx={{
           scrollbar: "auto",
           scrollbarWidth: "0",
+          outline : "none"
         }}
       >
         <Fade in={open}>
@@ -110,10 +111,13 @@ export default function RoomHome() {
               height: "80vh",
               left: "0px",
               top: "22%",
+              outline : "none",
 
               background: "#FFFFFF",
               boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
               borderRadius: "29px 29px 0px 0px",
+
+
             }}
           >
             <div className="add-room-title-container">Add Room Details</div>

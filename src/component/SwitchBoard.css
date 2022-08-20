@@ -1,6 +1,6 @@
 @media screen and (max-width: 460px) {
   .SwitchBoard-title-container {
-    width: 121px;
+    width: 100%;
     height: 18px;
 
     font-family: "Manrope";
@@ -66,16 +66,18 @@
   .SwitchBoard-count-numbrt-text {
     font-size: 15px;
     position: absolute;
+    font-weight: bold;
     left: 46%;
   }
   .SwitchBoard-count-numbrt-plus {
-    font-size: 13px;
+    font-size: 18px;
+    font-weight: bold;
     position: absolute;
     right: 10%;
   }
   .SwitchBoard-count-numbrt-minus {
-    font-size: 28px;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: bold;
     position: absolute;
     left:10%
   }

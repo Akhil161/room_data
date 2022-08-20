@@ -99,6 +99,9 @@ export default function RoomDetails(props) {
     setAnchorEl(null);
   };
   const handleDelete = async (i) => {
+    if(i==0){
+      return ;
+    }
     const newData = [...data];
     newData[0].switchBoards = newData[0].switchBoards
       .filter((e, index) => index !== i)
@@ -121,7 +124,7 @@ export default function RoomDetails(props) {
             data[0].switchBoards[0].appliances.lightLoad !== 0 ||
             data[0].switchBoards[0].appliances.heavyLoad !== 0
               ? "45vh"
-              : "60vh"
+              : "61vh"
           }`,
         }}
       >
@@ -214,14 +217,15 @@ export default function RoomDetails(props) {
                 ?.switchBoards.map((e, i) => {
                   return (
                     <>
-                      <button
+                     
+                       <div className="SwitchBoard-title-container">SwitchBoard {i + 1} <span className="roomDetails-SwitchBoard-delete-btn"
                         ids={i + 1}
                         onClick={(e) => {
                           handleDelete(i);
                         }}
                       >
                         x
-                      </button>
+                      </span></div>
                       <SwitchBoard
                         SwitchBoard={i}
                         data={data}
