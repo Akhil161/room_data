@@ -14,8 +14,11 @@ export default function RoomHome() {
   });
   let [rooms, setRoom] = useState([]);
   let [open, setOpen] = useState(false);
+  let [boxSize,setBoxSize] =useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const handleBoxSize = () => setBoxSize(true);
+  const handleBoxSizeReduce= () => setBoxSize(false);
   const { width } = useWindowDimensions();
   console.log(dataState);
 
@@ -75,7 +78,10 @@ export default function RoomHome() {
          <span className='addroom-room-currenyM'>&#8377; 150</span>
       </div> */}
       <div className="addRoom-room-cont2">
-        <div className="addRoom-room-cont1" onClick={handleOpen}>
+        <div className="addRoom-room-cont1" onClick={()=>{
+          handleOpen()
+          handleBoxSizeReduce()
+        }}>
           <img
             className="addroom-plus-icon"
             src={process.env.PUBLIC_URL + "/assets/icon/Frame.png"}
@@ -110,7 +116,7 @@ export default function RoomHome() {
               width: "99.99%",
               height: "80vh",
               left: "0px",
-              top: "22%",
+              top: `${boxSize===true?"19%":"22%"}`,
               outline : "none",
 
               background: "#FFFFFF",
@@ -126,7 +132,7 @@ export default function RoomHome() {
               control
             </div>
             <div className="room-name">
-              <RoomDetails onClosee={handleClose} />
+              <RoomDetails onClosee={handleClose} handleBoxSize={handleBoxSize} />
             </div>
           </Box>
         </Fade>

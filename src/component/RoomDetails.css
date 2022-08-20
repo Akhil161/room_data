@@ -41,27 +41,25 @@
     width: 0;
   }
   .room-name-btn {
-    position: relative;
+    /* position: relative; */
     width: 130px;
     height: 36px;
-    left: 0;
-    top: 0;
+    /* left: 0;
+    top: 0; */
     margin-right: 3vw;
-    
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
     background: #ffffff;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-  }
-  .room-name-btn-txt {
-    position: relative;
-    width: 78px;
-    height: 17px;
-
     font-family: "Manrope";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 19px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+  .room-name-btn-txt {
+
 
     color: #000000;
   }

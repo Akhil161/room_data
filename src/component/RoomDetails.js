@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { saveData } from "../redux/Action";
 
 export default function RoomDetails(props) {
+  let {handleBoxSize} =props
   let [data, setdata] = useState([
     {
       roomname: "Living Room",
@@ -123,7 +124,7 @@ export default function RoomDetails(props) {
             data[0].switchBoards[0].appliances.fans !== 0 ||
             data[0].switchBoards[0].appliances.lightLoad !== 0 ||
             data[0].switchBoards[0].appliances.heavyLoad !== 0
-              ? "45vh"
+              ? "52vh"
               : "61vh"
           }`,
         }}
@@ -246,7 +247,9 @@ export default function RoomDetails(props) {
       </div> */}
         <div style={{ width: "100%" }}>
           <div
-            onClick={handleSwitch}
+            onClick={()=>{handleSwitch()
+                       handleBoxSize()
+            }}
             className="room-appliance-count"
             style={{ width: "90%", left: "5%", top: 0 }}
           >
