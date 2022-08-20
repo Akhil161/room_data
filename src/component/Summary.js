@@ -1,8 +1,14 @@
 import React from "react";
 import "./Summary.css";
 import {plan} from './Paymentobj'
+import { useSelector } from "react-redux";
+
 
 export default function Summary() {
+  let dataState = useSelector((state) => {
+    return state.sar;
+  });
+  console.log(dataState);
   return (
     <>
       <div className="summary-title-cont">
@@ -30,6 +36,25 @@ export default function Summary() {
       </div>
 
       <div className="summary-rooms-cont">
+      <div className="summary-rooms-inner-cont">
+     {
+      dataState.length!==0?
+      dataState.map((e)=>{
+        return(
+          
+          
+            <div className="summary-room-details">
+              <span className="summary-room-name">{e.roomname}</span>
+              <span className="summary-room-cutomize">Customize</span>
+              <span className="summary-room-money">₹ 150</span>
+            </div>
+          
+        );
+      }):null
+     }
+       </div>
+</div>
+      {/* <div className="summary-rooms-cont">
         <div className="summary-rooms-inner-cont">
           <div className="summary-room-details">
             <span className="summary-room-name">Living Room</span>
@@ -67,7 +92,7 @@ export default function Summary() {
             <span className="summary-room-money">₹ 150</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="summary-room-frequantBuy-conyainer">
         <div className="summary-room-frequantBuy-tit">
