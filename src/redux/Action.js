@@ -7,3 +7,10 @@ export const saveData = (data) => {
              payload:data[0],
          }
  }
+ export const updateData = (data) => {
+    console.log(data)
+       return {
+                type:"update",
+                payload:data[0],
+            }
+    }

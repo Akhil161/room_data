@@ -3,26 +3,12 @@ import React, { useEffect, useState } from "react";
 import "./RoomDetails.css";
 import SwitchBoard from "./SwitchBoard";
 import { useDispatch, useSelector } from "react-redux";
-import { saveData } from "../redux/Action";
+import { saveData,updateData } from "../redux/Action";
 
 export default function RoomDetails(props) {
-  let {handleBoxSize,rooms,roomids} =props;
-  let i;
-  if(roomids==100){
-   i=rooms.length;
-  }else{
-     i=roomids;
-  }
-  let reduxData=useSelector((state) => {
-    return state.sar;
-  });
-  useEffect((
-   ()=>{ let changeData = reduxData.filter((e)=>{
-      return e.roomId==roomids;
-    })
-    console.log("changeData =  ",changeData);
-  }
-  ),[])
+  let { handleBoxSize, roomids } = props;
+  let [selectTab, setSelectTab] = useState("Living Room");
+  let [selectTab1, setSelectTab1] = useState("Living Room");
   let [data, setdata] = useState([
     {
       roomname: "Living Room",
@@ -39,8 +25,30 @@ export default function RoomDetails(props) {
       ],
     },
   ]);
-  let [selectTab, setSelectTab] = useState("Living Room");
+  let reduxData = useSelector((state) => {
+    return state.sar;
+  });
   const [addSwitch, setAddSwitch] = useState(false);
+  let i;
+  if (roomids == 100) {
+    i = reduxData.length;
+  } else {
+    i = roomids;
+  }
+
+  useEffect(() => {
+    if (roomids != 100) {
+      let changeData = reduxData.filter((e) => {
+        return e.roomId == roomids;
+      });
+      console.log("changeData =  ", changeData);
+      setdata(changeData);
+      console.log(changeData, "27");
+      setSelectTab(changeData[0].roomname);
+      setSelectTab1(changeData[0].roomname);
+    }
+  }, []);
+
   let dispatch = useDispatch();
   function handleSwitch() {
     let roomNamme = [...data].filter((e) => {
@@ -116,8 +124,8 @@ export default function RoomDetails(props) {
     setAnchorEl(null);
   };
   const handleDelete = async (i) => {
-    if(i==0){
-      return ;
+    if (i == 0) {
+      return;
     }
     const newData = [...data];
     newData[0].switchBoards = newData[0].switchBoards
@@ -172,7 +180,8 @@ export default function RoomDetails(props) {
                         //         { roomname: e.name, roomId: i, switchBoards: [] },
                         //       ]
                         // );
-                        setSelectTab(e.name);
+                        
+                        setSelectTab1(e.name);
                         // setAddSwitch(!addSwitch);
                       }}
                       className={`room-name-btn ${
@@ -223,7 +232,7 @@ export default function RoomDetails(props) {
           </Popover>
         </div>
         <div className="swichBoard-data">
-          {data?.find((d) => {
+          {/* {data?.find((d) => {
             console.log(d.roomname);
             return d.roomname === "Living Room";
           })?.switchBoards.length !== 0
@@ -231,7 +240,8 @@ export default function RoomDetails(props) {
                 ?.find((d) => {
                   return d.roomname === "Living Room";
                 })
-                ?.switchBoards.map((e, i) => {
+                ?.
+                switchBoards.map((e, i) => {
                   return (
                     <>
                      
@@ -252,6 +262,35 @@ export default function RoomDetails(props) {
                     </>
                   );
                 })
+
+            : null} */}
+          {console.log(data, "265")}
+          {data.length !== 0
+            ? data[0].switchBoards.map((e, i) => {
+                return (
+                  <>
+                    <div className="SwitchBoard-title-container">
+                      SwitchBoard {i + 1}{" "}
+                      <span
+                        className="roomDetails-SwitchBoard-delete-btn"
+                        ids={i + 1}
+                        onClick={(e) => {
+                          handleDelete(i);
+                        }}
+                      >
+                        x
+                      </span>
+                    </div>
+
+                    <SwitchBoard
+                      SwitchBoard={i}
+                      data={data}
+                      setData={setdata}
+                      selectTab={selectTab}
+                    />
+                  </>
+                );
+              })
             : null}
         </div>
 
@@ -263,8 +302,9 @@ export default function RoomDetails(props) {
       </div> */}
         <div style={{ width: "100%" }}>
           <div
-            onClick={()=>{handleSwitch()
-                       handleBoxSize()
+            onClick={() => {
+              handleSwitch();
+              handleBoxSize();
             }}
             className="room-appliance-count"
             style={{ width: "90%", left: "5%", top: 0 }}
@@ -321,11 +361,17 @@ export default function RoomDetails(props) {
           onClick={(e) => {
             e.preventDefault();
             let newData = data;
-            newData[0].roomname = selectTab;
-            newData[0].roomId=i;
+            console.log(selectTab, "359");
+            newData[0].roomname = selectTab1;
+            newData[0].roomId = i;
             console.log("sandeep", newData);
             props.onClosee();
+            if(roomids==100){
             dispatch(saveData(newData));
+            }
+            else{
+              dispatch(updateData(newData));
+            }
           }}
         >
           <div className="addroom-bottom-upper1-cont">
