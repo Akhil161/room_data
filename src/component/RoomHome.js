@@ -15,6 +15,7 @@ export default function RoomHome() {
   let [rooms, setRoom] = useState([]);
   let [open, setOpen] = useState(false);
   let [boxSize,setBoxSize] =useState(false);
+  let [roomids,setroomids]=useState(100);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleBoxSize = () => setBoxSize(true);
@@ -56,7 +57,13 @@ export default function RoomHome() {
         {rooms.length !== 0
           ? rooms.map((e, i) => {
               return (
-                <div className="addRoom-room-detail">
+                <div className="addRoom-room-detail" rid={e.roomId} onClick={
+                  (e)=>{
+                    setroomids(Number(e.target.getAttribute("rid")));
+                    handleOpen()
+                    handleBoxSize()
+                  }
+                }>
                   <img
                     className="addroom-lamp-icon"
                     src={process.env.PUBLIC_URL + "/assets/icon/Group.png"}
@@ -132,7 +139,7 @@ export default function RoomHome() {
               control
             </div>
             <div className="room-name">
-              <RoomDetails onClosee={handleClose} handleBoxSize={handleBoxSize} />
+              <RoomDetails onClosee={handleClose} handleBoxSize={handleBoxSize} rooms={rooms} roomids={roomids}/>
             </div>
           </Box>
         </Fade>

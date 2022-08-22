@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { saveData } from "../redux/Action";
 
 export default function RoomDetails(props) {
-  let {handleBoxSize} =props
+  let {handleBoxSize,rooms,roomids} =props;
+  let i=rooms.length;
   let [data, setdata] = useState([
     {
       roomname: "Living Room",
@@ -306,6 +307,7 @@ export default function RoomDetails(props) {
             e.preventDefault();
             let newData = data;
             newData[0].roomname = selectTab;
+            newData[0].roomId=i;
             console.log("sandeep", newData);
             props.onClosee();
             dispatch(saveData(newData));
