@@ -7,7 +7,22 @@ import { saveData } from "../redux/Action";
 
 export default function RoomDetails(props) {
   let {handleBoxSize,rooms,roomids} =props;
-  let i=rooms.length;
+  let i;
+  if(roomids==100){
+   i=rooms.length;
+  }else{
+     i=roomids;
+  }
+  let reduxData=useSelector((state) => {
+    return state.sar;
+  });
+  useEffect((
+   ()=>{ let changeData = reduxData.filter((e)=>{
+      return e.roomId==roomids;
+    })
+    console.log("changeData =  ",changeData);
+  }
+  ),[])
   let [data, setdata] = useState([
     {
       roomname: "Living Room",
