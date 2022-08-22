@@ -72,6 +72,13 @@
   line-height: 15px;
   color: #747474;
 }
+.summary-room-cutomize-icon{
+  position: absolute;
+  left: 21.5%;
+  top: 72%;
+  height: 4.16px;
+  width: 6.13px;
+}
 .summary-room-money {
   position: absolute;
   width: 52px;

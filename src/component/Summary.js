@@ -45,7 +45,8 @@ export default function Summary() {
           
             <div className="summary-room-details">
               <span className="summary-room-name">{e.roomname}</span>
-              <span className="summary-room-cutomize">Customize</span>
+              <span className="summary-room-cutomize">Customize</span>       
+              <img className="summary-room-cutomize-icon" src={process.env.PUBLIC_URL+"/assets/icon/Vector.png"} alt="arrow"></img>
               <span className="summary-room-money">₹ 150</span>
             </div>
           
