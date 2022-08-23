@@ -6,56 +6,35 @@ import { useDispatch, useSelector } from "react-redux";
 import { saveData,updateData } from "../redux/Action";
 
 export default function RoomDetails(props) {
-  let { handleBoxSize, roomids } = props;
+  let { handleBoxSize, roomids ,data,setdata} = props;
   let [selectTab, setSelectTab] = useState("Living Room");
-  let [selectTab1, setSelectTab1] = useState("Living Room");
-  let [data, setdata] = useState([
-    {
-      roomname: "Living Room",
-      roomId: 0,
-      switchBoards: [
-        {
-          switchboardNumber: 1,
-          appliances: {
-            fans: 0,
-            lightLoad: 0,
-            heavyLoad: 0,
-          },
-        },
-      ],
-    },
-  ]);
+  let [selectTab1, setSelectTab1] = useState(data[0].roomname);
+  const [addSwitch, setAddSwitch] = useState(false);
+  
   let reduxData = useSelector((state) => {
     return state.sar;
   });
-  const [addSwitch, setAddSwitch] = useState(false);
+ 
+  console.log(data[0].roomname,"  18",  selectTab1);
   let i;
   if (roomids === 100) {
     i = reduxData.length;
   } else {
     i = roomids;
   }
-
+console.log(data,"23");
   useEffect(() => {
     if (roomids !== 100) {
-      let changeData = reduxData.filter((e) => {
-        return e.roomId === roomids;
-      });
-      setdata(changeData);
-      setSelectTab(changeData[0].roomname);
-      setSelectTab1(changeData[0].roomname);
+      setSelectTab1(data[0].roomname);
+      console.log(data[0].roomname,"   useEffect");
+      console.log(data[0].roomname,"  30",  selectTab1);
     }
-  }, []);
+  }, [data]);
 
   let dispatch = useDispatch();
   function handleSwitch() {
-    let roomNamme = [...data].filter((e) => {
-      return e.roomname === "Living Room";
-    });
-    let roomNamme1 = [...data].filter((e) => {
-      return e.roomname !== "Living Room";
-    });
-
+    
+let roomNamme=[...data]
     if (roomNamme[0]) {
       console.log(roomNamme);
       roomNamme[0].switchBoards = [
@@ -69,33 +48,12 @@ export default function RoomDetails(props) {
           },
         },
       ];
-      setdata([...roomNamme1, ...roomNamme]);
+      setdata(roomNamme);
       console.log("roomName1    ", data);
-    } else {
-      console.log("before", data);
-      let newData = [
-        ...data,
-        {
-          roomname: "Living Room",
-          roomId: data.length,
-          switchBoards: [
-            {
-              switchboardNumber: 1,
-              appliances: {
-                fans: 0,
-                lightLoad: 0,
-                heavyLoad: 0,
-              },
-            },
-          ],
-        },
-      ];
-      console.log("after", newData);
-      setdata(newData);
-    }
+     }
 
     setAddSwitch(!addSwitch);
-    console.log("setaddswitch    ", data);
+  
   }
 
   let [roomName, setRoomName] = useState([
@@ -164,23 +122,8 @@ export default function RoomDetails(props) {
                           ele.classList.remove("background-blue");
                         });
                         btn[i].classList.add("background-blue");
-
-                        // let newData = data;
-                        // newData = newData.filter((e) => {
-                        //   return e.roomId === i;
-                        // });
-
-                        // setdata(
-                        //   newData.length > 0
-                        //     ? data
-                        //     : [
-                        //         ...data,
-                        //         { roomname: e.name, roomId: i, switchBoards: [] },
-                        //       ]
-                        // );
                         
                         setSelectTab1(e.name);
-                        // setAddSwitch(!addSwitch);
                       }}
                       className={`room-name-btn ${
                         e.name === "Living Room"
@@ -230,39 +173,8 @@ export default function RoomDetails(props) {
           </Popover>
         </div>
         <div className="swichBoard-data">
-          {/* {data?.find((d) => {
-            console.log(d.roomname);
-            return d.roomname === "Living Room";
-          })?.switchBoards.length !== 0
-            ? data
-                ?.find((d) => {
-                  return d.roomname === "Living Room";
-                })
-                ?.
-                switchBoards.map((e, i) => {
-                  return (
-                    <>
-                     
-                       <div className="SwitchBoard-title-container">SwitchBoard {i + 1} <span className="roomDetails-SwitchBoard-delete-btn"
-                        ids={i + 1}
-                        onClick={(e) => {
-                          handleDelete(i);
-                        }}
-                      >
-                        x
-                      </span></div>
-                      <SwitchBoard
-                        SwitchBoard={i}
-                        data={data}
-                        setData={setdata}
-                        selectTab={"Living Room"}
-                      />
-                    </>
-                  );
-                })
-
-            : null} */}
-          {console.log(data, "265")}
+      
+        
           {data.length !== 0
             ? data[0].switchBoards.map((e, i) => {
                 return (
@@ -292,12 +204,6 @@ export default function RoomDetails(props) {
             : null}
         </div>
 
-        {/* <div onClick={handleSwitch} className="room-add-switchBoard">
-        <div className="room-add-switchBoard-icon">
-        <img className="plus-img" src={process.env.PUBLIC_URL+"/assets/icon/Frame.png"} alt="add"></img>
-        </div>
-        <div className="room-add-switchBoard-title">Add SwitchBoard</div>
-      </div> */}
         <div style={{ width: "100%" }}>
           <div
             onClick={() => {
@@ -326,48 +232,31 @@ export default function RoomDetails(props) {
           </div>
         </div>
       </div>
-      {/* <div
-        className="room-details-bottom-cont"
-        onClick={(e) => {
-          e.preventDefault();
-          let newData = data;
-          newData[0].roomname = selectTab;
-          console.log("sandeep", newData);
-          props.onClosee();
-          dispatch(saveData(newData));
-        }} >
       
-        <div className="addroom-bottom-upper1-cont">
-          <span className="addroom-bottom-upper-cont fontSize">
-            ₹ 2000 will be charged as One Time Security at checkout
-          </span>
-        </div>
-        <div className="addroom-bottom-upper2-cont">
-          <span className="cuurr">₹ 150</span>
-          <span className="sub sizefont">Monthly Subscription Fee</span>
-          <span className="next">Next</span>
-        </div> 
-      </div>  */}
 
       {data[0].switchBoards[0].appliances.fans !== 0 ||
       data[0].switchBoards[0].appliances.lightLoad !== 0 ||
       data[0].switchBoards[0].appliances.heavyLoad !== 0 ? (
-        // let a =document.getElementById(MaxHeight);
+      
 
         <div
           className="addroom-bottom-container"
           onClick={(e) => {
             e.preventDefault();
+            console.log(data,"245");
             let newData = data;
             console.log(selectTab, "359");
-            newData[0].roomname = selectTab1;
+          
             newData[0].roomId = i;
             console.log("sandeep", newData);
+            console.log(selectTab1);
+            newData[0].roomname=selectTab1;
             props.onClosee();
             if(roomids==100){
             dispatch(saveData(newData));
             }
             else{
+              
               dispatch(updateData(newData));
             }
           }}

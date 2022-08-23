@@ -21,6 +21,50 @@ export default function RoomHome() {
   const handleClose = () => setOpen(false);
   const handleBoxSize = () => setBoxSize(true);
   const handleBoxSizeReduce = () => setBoxSize(false);
+  let [data, setdata] = useState([
+    {
+      roomname: "Living Room",
+      roomId: 0,
+      switchBoards: [
+        {
+          switchboardNumber: 1,
+          appliances: {
+            fans: 0,
+            lightLoad: 0,
+            heavyLoad: 0,
+          },
+        },
+      ],
+    },
+  ]);
+  useEffect(()=>{
+     
+    if(roomids!=100){
+      let newData=dataState.filter((e)=>{
+        return e.roomId===roomids;
+      })
+      setdata(newData);
+    }else{
+      let newData1=[
+        {
+          roomname: "Living Room",
+          roomId: 0,
+          switchBoards: [
+            {
+              switchboardNumber: 1,
+              appliances: {
+                fans: 0,
+                lightLoad: 0,
+                heavyLoad: 0,
+              },
+            },
+          ],
+        },
+      ]
+      setdata(newData1);
+    }
+  },[roomids,open])
+  
   return (
     <div className="addRoom-d-c">
       <div className="addRoom-title-cont">
@@ -53,19 +97,15 @@ export default function RoomHome() {
           setroomids={setroomids}
           open={open}
         />
-        {/* <div className='addRoom-room-detail'>
-         <img className='addroom-lamp-icon' src={process.env.PUBLIC_URL+"/assets/icon/Group.png"} alt="lamp"></img>
-         <span className='addroom-room-name'>Living Room</span>
-         <span className='addroom-room-details1'>1 x Light 1 x Fan 1 x AC</span>
-         <span className='addroom-room-currenyM'>&#8377; 150</span>
-      </div> */}
+       
         <div className="addRoom-room-cont2">
           <div
             className="addRoom-room-cont1"
             onClick={() => {
+              setroomids(100);
               handleOpen();
               handleBoxSizeReduce();
-              setroomids(100);
+              
             }}
           >
             <img
@@ -119,6 +159,8 @@ export default function RoomHome() {
                 onClosee={handleClose}
                 handleBoxSize={handleBoxSize}
                 roomids={roomids}
+                data={data}
+                setdata={setdata}
               />
             </div>
           </Box>

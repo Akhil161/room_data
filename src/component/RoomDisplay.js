@@ -20,6 +20,7 @@ export default function RoomDisplay(props) {
                     setroomids(e.roomId);
                     handleOpen();
                     handleBoxSize();
+                    
                   }}
                 >
                   <img

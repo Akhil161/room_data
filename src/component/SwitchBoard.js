@@ -79,9 +79,7 @@ export default function SwitchBoard(props) {
                 newData[0].switchBoards[SwitchBoard].appliances.fans += 1;
                 setData(newData);
             }}
-          >
-            {" "}
-            +
+          > +
           </div>
         </div>
       </div>
@@ -98,10 +96,12 @@ export default function SwitchBoard(props) {
           <div
             className="SwitchBoard-count-numbrt-minus"
             onClick={() => {
+              if( heavyLoad > 0) {
+
                 const newData = [...data];
                 newData[0].switchBoards[SwitchBoard].appliances.heavyLoad -= 1;
                 setData(newData);
-            }}
+            }}}
           >
             -
           </div>
@@ -109,14 +109,13 @@ export default function SwitchBoard(props) {
           <div
             className="SwitchBoard-count-numbrt-plus"
             onClick={() => {
-              if( heavyLoad > 0) {
+              
                 const newData = [...data];
                 newData[0].switchBoards[SwitchBoard].appliances.heavyLoad += 1;
                 setData(newData);
-              }
+              
             }}
           >
-            {" "}
             +
           </div>
         </div>
