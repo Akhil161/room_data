@@ -15,21 +15,13 @@ export default function RoomDetails(props) {
     return state.sar;
   });
  
-  console.log(data[0].roomname,"  18",  selectTab1);
   let i;
   if (roomids === 100) {
     i = reduxData.length;
   } else {
     i = roomids;
   }
-console.log(data,"23");
-  // useEffect(() => {
-  //   if (roomids !== 100) {
-  //     setSelectTab1(data[0].roomname);
-  //     console.log(data[0].roomname,"   useEffect");
-  //     console.log(data[0].roomname,"  30",  selectTab1);
-  //   }
-  // }, [data]);
+
 
   let dispatch = useDispatch();
   function handleSwitch() {
@@ -49,7 +41,7 @@ let roomNamme=[...data]
         },
       ];
       setdata(roomNamme);
-      console.log("roomName1    ", data);
+      
      }
 
     setAddSwitch(!addSwitch);
