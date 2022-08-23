@@ -5,6 +5,7 @@ import Planselect from './component/Planselect';
 import RoomHome from './component/RoomHome';
 import Summary from './component/Summary';
 import Getstarted from './component/Getstarted';
+import RoomDisplay from './component/RoomDisplay';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -21,7 +22,8 @@ function App() {
         <Route path="login/plan" element={<Planselect />} />
     
         
-        <Route path="login/plan/room" element={<RoomHome />} />
+        {/* <Route path="/login/plan/room" element={<RoomHome />} /> */}
+        <Route path="/login/plan/room" element={<RoomDisplay />} />
         <Route path="login/plan/room/summary" element={<Summary />} />
 
          

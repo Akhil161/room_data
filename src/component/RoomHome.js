@@ -1,26 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-import { useWindowDimensions } from "./window/Resize";
 import RoomDetails from "./RoomDetails";
-import RoomDisplay from "./RoomDisplay";
 import "./RoomHome.css";
-export default function RoomHome() {
+export default function RoomHome(props) {
+  let {open,handleBoxSize,boxSize,handleClose,roomids} = props;
   let dataState = useSelector((state) => {
     return state.sar;
   });
 
-  let [open, setOpen] = useState(false);
-  let [boxSize, setBoxSize] = useState(false);
-  let [roomids, setroomids] = useState(100);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const handleBoxSize = () => setBoxSize(true);
-  const handleBoxSizeReduce = () => setBoxSize(false);
   let [data, setdata] = useState([
     {
       roomname: "Living Room",
@@ -67,56 +58,7 @@ export default function RoomHome() {
   
   return (
     <div className="addRoom-d-c">
-      <div className="addRoom-title-cont">
-        <div className="addRoom-title-inner">
-          <span
-            style={{
-              fontWeight: "700",
-              fontSize: "36px",
-              LineHeight: "49.18px",
-            }}
-          >
-            Add the rooms
-          </span>
-          <br />
-          <span
-            style={{
-              fontWeight: "400",
-              fontSize: "36px",
-              LineHeight: "49.18px",
-            }}
-          >
-            in your home
-          </span>
-        </div>
-      </div>
-      <div className="add-room-details-container">
-        <RoomDisplay
-          handleOpen={handleOpen}
-          handleBoxSize={handleBoxSize}
-          setroomids={setroomids}
-          open={open}
-        />
-       
-        <div className="addRoom-room-cont2">
-          <div
-            className="addRoom-room-cont1"
-            onClick={() => {
-              setroomids(100);
-              handleOpen();
-              handleBoxSizeReduce();
-              
-            }}
-          >
-            <img
-              className="addroom-plus-icon"
-              src={process.env.PUBLIC_URL + "/assets/icon/Frame.png"}
-              alt="lamp"
-            ></img>
-            <span className="addroom-add-room-name">Add Room</span>
-          </div>
-        </div>
-      </div>
+      
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -166,23 +108,6 @@ export default function RoomHome() {
           </Box>
         </Fade>
       </Modal>
-      {dataState.length > 0 ? (
-        <div className="addroom-bottom-container">
-          <Link to="summary">
-            <div className="addroom-bottom-upper1-cont">
-              ₹ 4000{" "}
-              <span style={{ fontWeight: "400" }}>
-                will be charged as One Time Security at checkout
-              </span>
-            </div>
-            <div className="addroom-bottom-upper2-cont">
-              <span className="cuurr">₹ 300</span>
-              <span className="sub ">Monthly Subscription Fee</span>
-              <span className="next">Next</span>
-            </div>
-          </Link>
-        </div>
-      ) : null}
-    </div>
+          </div>
   );
 }

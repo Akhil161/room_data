@@ -23,13 +23,13 @@ export default function RoomDetails(props) {
     i = roomids;
   }
 console.log(data,"23");
-  useEffect(() => {
-    if (roomids !== 100) {
-      setSelectTab1(data[0].roomname);
-      console.log(data[0].roomname,"   useEffect");
-      console.log(data[0].roomname,"  30",  selectTab1);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (roomids !== 100) {
+  //     setSelectTab1(data[0].roomname);
+  //     console.log(data[0].roomname,"   useEffect");
+  //     console.log(data[0].roomname,"  30",  selectTab1);
+  //   }
+  // }, [data]);
 
   let dispatch = useDispatch();
   function handleSwitch() {
@@ -122,8 +122,9 @@ let roomNamme=[...data]
                           ele.classList.remove("background-blue");
                         });
                         btn[i].classList.add("background-blue");
+                        {roomids!==100?setSelectTab1(e.name):setSelectTab(e.name)
+                        }
                         
-                        setSelectTab1(e.name);
                       }}
                       className={`room-name-btn ${
                         e.name === "Living Room"
@@ -196,7 +197,7 @@ let roomNamme=[...data]
                       SwitchBoard={i}
                       data={data}
                       setData={setdata}
-                      selectTab={selectTab}
+                      // selectTab={selectTab}
                     />
                   </>
                 );
@@ -250,13 +251,14 @@ let roomNamme=[...data]
             newData[0].roomId = i;
             console.log("sandeep", newData);
             console.log(selectTab1);
-            newData[0].roomname=selectTab1;
+            // newData[0].roomname=selectTab1;
             props.onClosee();
             if(roomids==100){
+              newData[0].roomname=selectTab;
             dispatch(saveData(newData));
             }
             else{
-              
+              newData[0].roomname=selectTab1;
               dispatch(updateData(newData));
             }
           }}

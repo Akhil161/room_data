@@ -2,7 +2,7 @@ import React from "react";
 import "./Summary.css";
 import {plan} from './Paymentobj'
 import { useSelector } from "react-redux";
-
+import {Link} from 'react-router-dom';
 
 export default function Summary() {
   let dataState = useSelector((state) => {
@@ -45,8 +45,10 @@ export default function Summary() {
           
             <div className="summary-room-details">
               <span className="summary-room-name">{e.roomname}</span>
+              <Link to="/login/plan/room">
               <span className="summary-room-cutomize">Customize</span>       
               <img className="summary-room-cutomize-icon" src={process.env.PUBLIC_URL+"/assets/icon/Vector.png"} alt="arrow"></img>
+              </Link>
               <span className="summary-room-money">₹ 150</span>
             </div>
           
