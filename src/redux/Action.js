@@ -8,9 +8,8 @@ export const saveData = (data) => {
          }
  }
  export const updateData = (data) => {
-    console.log(data)
        return {
-                type:"update",
-                payload:data[0],
+                type: "update",
+                payload: data[0],
             }
     }

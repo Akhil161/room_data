@@ -7,10 +7,14 @@ export const saveReduce = (state = initailState, action) => {
 
     case "update":
       let updateD = action.payload;
-      let filterData = state.filter((e) => {
-        return e.roomId != updateD.roomId;
-      });
-      return [...filterData, action.payload];
+      let newData = state.map((e) => {
+        if (e.roomId === updateD.roomId) {
+          return action.payload;
+        } else {
+          return e;
+        }
+      })
+      return [...newData];
 
     default:
       return [...state];

@@ -3,20 +3,11 @@ import { useSelector } from "react-redux";
 
 
 export default function RoomDisplay(props) {
-    let {handleOpen,handleBoxSize,setroomids,open} =props;
+    let {handleOpen,handleBoxSize,setroomids, open} =props;
     
     let dataState = useSelector((state) => {
         return state.sar;
-      });
-    //   let [rooms, setRoom] = useState([]);
-    //   useEffect(() => {
-        
-        
-    //        setRoom(dataState);
-    //   }, [open,dataState]);
-      
-    console.log(dataState);
-    
+      });    
   return (
     <>
      {dataState.length !== 0
@@ -26,8 +17,7 @@ export default function RoomDisplay(props) {
                   className="addRoom-room-detail"
                   rid={e.roomId}
                   onClick={(ele) => {
-                    console.log("onCLick:", e);
-                    setroomids(Number(ele.target.getAttribute("rid")));
+                    setroomids(e.roomId);
                     handleOpen();
                     handleBoxSize();
                   }}

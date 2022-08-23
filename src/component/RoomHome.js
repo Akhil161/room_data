@@ -13,7 +13,7 @@ export default function RoomHome() {
   let dataState = useSelector((state) => {
     return state.sar;
   });
-  
+
   let [open, setOpen] = useState(false);
   let [boxSize, setBoxSize] = useState(false);
   let [roomids, setroomids] = useState(100);
@@ -21,11 +21,6 @@ export default function RoomHome() {
   const handleClose = () => setOpen(false);
   const handleBoxSize = () => setBoxSize(true);
   const handleBoxSizeReduce = () => setBoxSize(false);
-  const { width } = useWindowDimensions();
-  console.log(dataState);
-
-
-  // console.log("Final Data",dataState );
   return (
     <div className="addRoom-d-c">
       <div className="addRoom-title-cont">
@@ -52,7 +47,12 @@ export default function RoomHome() {
         </div>
       </div>
       <div className="add-room-details-container">
-       <RoomDisplay  handleOpen={handleOpen} handleBoxSize={handleBoxSize} setroomids={setroomids} open={open}/>
+        <RoomDisplay
+          handleOpen={handleOpen}
+          handleBoxSize={handleBoxSize}
+          setroomids={setroomids}
+          open={open}
+        />
         {/* <div className='addRoom-room-detail'>
          <img className='addroom-lamp-icon' src={process.env.PUBLIC_URL+"/assets/icon/Group.png"} alt="lamp"></img>
          <span className='addroom-room-name'>Living Room</span>
@@ -118,7 +118,6 @@ export default function RoomHome() {
               <RoomDetails
                 onClosee={handleClose}
                 handleBoxSize={handleBoxSize}
-                
                 roomids={roomids}
               />
             </div>

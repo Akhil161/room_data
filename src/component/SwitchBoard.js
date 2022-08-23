@@ -2,52 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./SwitchBoard.css";
 
 export default function SwitchBoard(props) {
-  const { SwitchBoard, selectTab, data, setData } = props;
-  console.log(SwitchBoard);
-  let [light, setLight] = useState(0);
-  let [fan, setFan] = useState(0);
-  let [ac, setAc] = useState(0);
-  console.log(data,selectTab, "11");
-
-  useEffect(() => {
-    let newData = data[0].switchBoards[SwitchBoard].appliances;
-    console.log("useeffect hg", newData);
-    setAc(newData.heavyLoad);
-    setFan(newData.fans);
-    setLight(newData.lightLoad);
-  }, [data, SwitchBoard]);
-
-  const handleClick = () => {
-    let appliances = {
-      fans: fan,
-      lightLoad: light,
-      heavyLoad: ac,
-    };
-    console.log("swtgf  ", data);
-    let newData = data;
-    newData = newData.filter((e) => {
-      console.log("e==   ", e);
-      return e.roomname === selectTab;
-    });
-    let newData1 = data;
-    newData1 = newData1.filter((e) => {
-      console.log("e!==   ", e);
-      return e.roomname !== selectTab;
-    });
-
-    if (newData.length > 0)
-      newData[0].switchBoards[SwitchBoard].appliances = appliances;
-    setData([...newData1, ...newData]);
-    console.log("handclick end    ", data);
-  };
-
-  useEffect(() => {
-    handleClick();
-  }, [light, fan, ac]);
-  console.log("switch baotdghgfff", data);
+  const { SwitchBoard, data, setData } = props;
+  const {lightLoad, fans, heavyLoad} = data[0].switchBoards[SwitchBoard].appliances;
   return (
     <div style={{ marginBottom: "4vh" }}>
-      {/* <div className="SwitchBoard-title-container">SwitchBoard {SwitchBoard + 1}</div> */}
       <div className="room-appliance-count">
         <div className="IMG">
           <img
@@ -67,15 +25,23 @@ export default function SwitchBoard(props) {
           <div
             className="SwitchBoard-count-numbrt-minus"
             onClick={() => {
-              if (light > 0) setLight(light - 1);
+              if( lightLoad > 0) {
+                const newData = [...data];
+                newData[0].switchBoards[SwitchBoard].appliances.lightLoad -= 1;
+                setData(newData);
+              }
             }}
           >
             -
           </div>
-          <div className="SwitchBoard-count-numbrt-text">{light}</div>
+          <div className="SwitchBoard-count-numbrt-text">{lightLoad}</div>
           <div
             className="SwitchBoard-count-numbrt-plus"
-            onClick={() => setLight(light + 1)}
+            onClick={() => {
+                const newData = new Array(...data);
+                newData[0].switchBoards[SwitchBoard].appliances.lightLoad += 1;
+                setData(newData);
+            }}
           >
             +
           </div>
@@ -95,15 +61,24 @@ export default function SwitchBoard(props) {
           <div
             className="SwitchBoard-count-numbrt-minus"
             onClick={() => {
-              if (fan > 0) setFan(fan - 1);
+              if( fans > 0) {
+                const newData = [...data];
+                newData[0].switchBoards[SwitchBoard].appliances.fans -= 1;
+                setData(newData);
+              }
             }}
           >
             -
           </div>
-          <div className="SwitchBoard-count-numbrt-text">{fan}</div>
+          <div className="SwitchBoard-count-numbrt-text">{fans}</div>
           <div
             className="SwitchBoard-count-numbrt-plus"
-            onClick={() => setFan(fan + 1)}
+            onClick={() => {
+              
+                const newData = [...data];
+                newData[0].switchBoards[SwitchBoard].appliances.fans += 1;
+                setData(newData);
+            }}
           >
             {" "}
             +
@@ -123,15 +98,23 @@ export default function SwitchBoard(props) {
           <div
             className="SwitchBoard-count-numbrt-minus"
             onClick={() => {
-              if (ac > 0) setAc(ac - 1);
+                const newData = [...data];
+                newData[0].switchBoards[SwitchBoard].appliances.heavyLoad -= 1;
+                setData(newData);
             }}
           >
             -
           </div>
-          <div className="SwitchBoard-count-numbrt-text">{ac}</div>
+          <div className="SwitchBoard-count-numbrt-text">{heavyLoad}</div>
           <div
             className="SwitchBoard-count-numbrt-plus"
-            onClick={() => setAc(ac + 1)}
+            onClick={() => {
+              if( heavyLoad > 0) {
+                const newData = [...data];
+                newData[0].switchBoards[SwitchBoard].appliances.heavyLoad += 1;
+                setData(newData);
+              }
+            }}
           >
             {" "}
             +

@@ -30,20 +30,18 @@ export default function RoomDetails(props) {
   });
   const [addSwitch, setAddSwitch] = useState(false);
   let i;
-  if (roomids == 100) {
+  if (roomids === 100) {
     i = reduxData.length;
   } else {
     i = roomids;
   }
 
   useEffect(() => {
-    if (roomids != 100) {
+    if (roomids !== 100) {
       let changeData = reduxData.filter((e) => {
-        return e.roomId == roomids;
+        return e.roomId === roomids;
       });
-      console.log("changeData =  ", changeData);
       setdata(changeData);
-      console.log(changeData, "27");
       setSelectTab(changeData[0].roomname);
       setSelectTab1(changeData[0].roomname);
     }
@@ -124,7 +122,7 @@ export default function RoomDetails(props) {
     setAnchorEl(null);
   };
   const handleDelete = async (i) => {
-    if (i == 0) {
+    if (i === 0) {
       return;
     }
     const newData = [...data];
