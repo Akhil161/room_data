@@ -36,10 +36,10 @@ export default function Planselect() {
         data.length!==0?
         data.map((e,i)=>{
             return(
-                 <div className="pack-caontainer">
-      <div  key={i} className="pack-caontaine1">
+                 <div className="pack-caontainer" key={i}>
+      <div   className="pack-caontaine1">
         <div className="pack-room-package">{e.top_title}</div>
-        <div key={i+"8"} className="pack-room-money-container">
+        <div  className="pack-room-money-container">
           <span className="pack-room-money-sign">₹</span>
           <span className="pack-r00m-money-rate">{e.rs}<span style={{
                   fontWeight:"400",
@@ -73,12 +73,12 @@ export default function Planselect() {
             )
         }):null
     } 
-    <div className="pack-caontainer" style={{marginBottom:"12%",}}>
+    <div  key={1000} className="pack-caontainer" style={{marginBottom:"12%",}}>
       <div key="last" className="pack-caontaine1" style={{
         backgroundColor: "#3052AC",
         
       }}>
-        <div className="pack-room-package" style={{color:"#FFFFFF",}}>Make your own Package</div>
+        <div   className="pack-room-package" style={{color:"#FFFFFF",}}>Make your own Package</div>
         <div className="pack-room-money-container">
         <span className="pack-r00m-money-rate" style={{left:0,color:"#FFFFFF",}}>Custom</span>
           

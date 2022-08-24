@@ -26,9 +26,9 @@ export default function Slider() {
 <>
 
     <Carousel >
-      {contents.map((e, index) => {
+      {contents.map((e, i) => {
        return (
-            <div style={{backgrounColor:"red",height:"50vh"}} className="main-slider-cont">
+            <div  className="main-slider-cont" key={i}>
             <div  className="d-block w-100 slider-text">{e.heading} <span className='inner-text-slider'>{e.subHeading}</span></div>      
             <div className="d-block w-100">
             <p className='getting-started-inner-text'>{e.para} </p>
