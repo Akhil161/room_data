@@ -9,7 +9,7 @@ export default function Getstarted() {
     <div>
     <div className='getstarted-main-img-container'>
         <div className='getstarted-main-img-img'>
-            <img src={process.env.PUBLIC_URL+'assets/img/frontImg.png'}></img>
+            <img src={process.env.PUBLIC_URL+'assets/img/frontImg.png'} alt="main img"></img>
         </div>
     </div>
     

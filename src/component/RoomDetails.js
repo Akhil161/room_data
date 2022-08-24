@@ -1,5 +1,5 @@
 import { Popover } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./RoomDetails.css";
 import SwitchBoard from "./SwitchBoard";
 import { useDispatch, useSelector } from "react-redux";
@@ -114,8 +114,8 @@ let roomNamme=[...data]
                           ele.classList.remove("background-blue");
                         });
                         btn[i].classList.add("background-blue");
-                        {roomids!==100?setSelectTab1(e.name):setSelectTab(e.name)
-                        }
+                        roomids!==100?setSelectTab1(e.name):setSelectTab(e.name)
+                        
                         
                       }}
                       className={`room-name-btn ${
@@ -245,7 +245,7 @@ let roomNamme=[...data]
             console.log(selectTab1);
             // newData[0].roomname=selectTab1;
             props.onClosee();
-            if(roomids==100){
+            if(roomids===100){
               newData[0].roomname=selectTab;
             dispatch(saveData(newData));
             }

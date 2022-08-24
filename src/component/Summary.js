@@ -2,7 +2,6 @@ import React,{useState} from "react";
 import "./Summary.css";
 import {plan} from './Paymentobj'
 import { useSelector } from "react-redux";
-import {Link} from 'react-router-dom';
 import RoomHome from "./RoomHome";
 
 export default function Summary() {
@@ -15,7 +14,6 @@ export default function Summary() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleBoxSize = () => setBoxSize(true);
-  const handleBoxSizeReduce = () => setBoxSize(false);
 
 
 

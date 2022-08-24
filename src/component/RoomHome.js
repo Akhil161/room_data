@@ -30,7 +30,7 @@ export default function RoomHome(props) {
   ]);
   useEffect(()=>{
      
-    if(roomids!=100){
+    if(roomids!==100){
       let newData=dataState.filter((e)=>{
         return e.roomId===roomids;
       })
@@ -54,7 +54,7 @@ export default function RoomHome(props) {
       ]
       setdata(newData1);
     }
-  },[roomids,open])
+  },[roomids,open,dataState])
   
   return (
     <div className="addRoom-d-c">
