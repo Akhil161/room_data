@@ -53,7 +53,7 @@ export default function Planselect() {
         <div className="pcak-container-btn">
           <span style={{
             position: "absolute",
-            width: "70px",
+            width: "fit-content",
             height: "27px",
             left: "36%",
             top: "25%",
@@ -86,10 +86,10 @@ export default function Planselect() {
         <div className="pack-container-description" style={{color:"#FFFFFF",}}>
         Automate 5 lights, 1 fan, 1 tv and 1 air conditioner
         </div>
-        <Link to="room">
+        <Link className="link"to="room">
         <div className="pcak-container-btn" style={{background: "#FFFFFFB2",}}>
           <span style={{
-            position: "absolute",
+            position: "relative",
             width: "70px",
             height: "27px",
             left: "36%",
