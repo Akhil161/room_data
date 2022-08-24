@@ -96,7 +96,7 @@ let roomNamme=[...data]
             data[0].switchBoards[0].appliances.fans !== 0 ||
             data[0].switchBoards[0].appliances.lightLoad !== 0 ||
             data[0].switchBoards[0].appliances.heavyLoad !== 0
-              ? "52vh"
+              ? "53vh"
               : "61vh"
           }`,
         }}
