@@ -73,7 +73,7 @@ export default function Planselect() {
             )
         }):null
     } 
-    <div  key={1000} className="pack-caontainer" style={{marginBottom:"12%",}}>
+    <div   className="pack-caontainer" style={{marginBottom:"12%",}}>
       <div key="last" className="pack-caontaine1" style={{
         backgroundColor: "#3052AC",
         

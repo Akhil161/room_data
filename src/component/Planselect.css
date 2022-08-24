@@ -97,14 +97,13 @@ border-radius: 40px;
     position: relative;
     top: 12.7vh;
     left:2.5%;
-}
+    background: rgba(255, 255, 255, 0.7);}
 .pcak-container-btn-custom{
     width: 95%;
     height: 52px;
     
     
-    background: rgba(48, 82, 172, 0.1);
-    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.7);    border-radius: 40px;
 }
 /* 
 .pack-caontainer p{
