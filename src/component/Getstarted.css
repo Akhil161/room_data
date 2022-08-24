@@ -91,4 +91,13 @@ color: #747474;
 
   
   }
+  .slider-frame{
+   height: 31vh !important;
+}
+}
+.slider-control-centerright{
+   display: none;
+}
+.slider-control-centerleft{
+   display: none;
 }

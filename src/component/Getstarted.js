@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
+import Slider from './Slider'
 import './Getstarted.css'
 
 
@@ -12,40 +13,8 @@ export default function Getstarted() {
         </div>
     </div>
     
-    
-    <div id="carouselExampleIndicators" className="carousel slide " data-bs-ride="true">
-  <div className="carousel-indicators getting-slider-btn-container">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1" style={{backgroundColor: "#406388",borderRadius:"50%",height:"5.65px",width:"5.73px"}}></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" style={{backgroundColor: "#406388",borderRadius:"50%",height:"5.65px",width:"5.73px"}}></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" style={{backgroundColor: "#406388",borderRadius:"50%",height:"5.65px",width:"5.73px"}}></button>
-  </div>
-  <div className="carousel-inner">
-    <div className="carousel-item active main-slider-cont">
-    <div class="d-block w-100 slider-text" >Welcome to <span className='inner-text-slider'>Aliste</span></div>      
-    <div class="d-block w-100">
-        
-        <p className='getting-started-inner-text'>Aliste Helps you make your home smart without making you burn a hole through your pocket.  Our aim is to redefine the way people live by imparting luxury 
-</p>
-      </div>
-    </div>
-    <div className="carousel-item main-slider-cont">
-     <div className="d-block w-100 slider-text" >Welcome to <span className='inner-text-slider'>Aliste</span></div>      
-    <div className="d-block w-100">
-        
-        <p className='getting-started-inner-text'>Aliste Helps you make your home smart without making you burn a hole through your pocket.  Our aim is to redefine the way people live by imparting luxury 
-</p>
-      </div>
-    </div>
-    <div className="carousel-item main-slider-cont">
-    <div className="d-block w-100 slider-text" >Welcome to <span className='inner-text-slider'>Aliste</span></div>      
-    <div className="d-block w-100">
-    <p className='getting-started-inner-text'>Aliste Helps you make your home smart without making you burn a hole through your pocket.  Our aim is to redefine the way people live by imparting luxury 
-</p>
-      </div>
-    </div>
-  </div>
- 
-</div>
+
+<Slider/>
 <Link className="link" to="login">
 <div className="getting-started-btn-container">
         
