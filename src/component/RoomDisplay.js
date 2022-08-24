@@ -8,6 +8,7 @@ export default function RoomDisplay(props) {
   let [open, setOpen] = useState(false);
   let [boxSize, setBoxSize] = useState(false);
   let [roomids, setroomids] = useState(100);
+  let [name,setName] =useState("Add");
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -52,8 +53,10 @@ export default function RoomDisplay(props) {
                   rid={e.roomId}
                   onClick={(ele) => {
                     setroomids(e.roomId);
+                    setName("Edit");
                     handleOpen();
                     handleBoxSize();
+
                     
                   }}
                 >
@@ -76,6 +79,7 @@ export default function RoomDisplay(props) {
             className="addRoom-room-cont1"
             onClick={() => {
               setroomids(100);
+              setName("Add")
               handleOpen();
               handleBoxSizeReduce();
               
@@ -91,7 +95,8 @@ export default function RoomDisplay(props) {
         </div>
           </div>
           {/* model */}
-          <RoomHome open={open} handleBoxSize={handleBoxSize} boxSize={boxSize} handleClose={handleClose} roomids={roomids}/>
+
+          <RoomHome open={open} handleBoxSize={handleBoxSize} boxSize={boxSize} handleClose={handleClose} roomids={roomids} name={name}/>
           {dataState.length > 0 ? (
         <div className="addroom-bottom-container">
           <Link to="summary">

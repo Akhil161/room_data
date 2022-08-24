@@ -1,10 +1,24 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Summary.css";
 import {plan} from './Paymentobj'
 import { useSelector } from "react-redux";
 import {Link} from 'react-router-dom';
+import RoomHome from "./RoomHome";
 
 export default function Summary() {
+  
+  // model
+  let [open, setOpen] = useState(false);
+  let [boxSize, setBoxSize] = useState(false);
+  let [roomids, setroomids] = useState(100);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const handleBoxSize = () => setBoxSize(true);
+  const handleBoxSizeReduce = () => setBoxSize(false);
+
+
+
   let dataState = useSelector((state) => {
     return state.sar;
   });
@@ -45,10 +59,16 @@ export default function Summary() {
           
             <div className="summary-room-details">
               <span className="summary-room-name">{e.roomname}</span>
-              <Link to="/login/plan/room">
-              <span className="summary-room-cutomize">Customize</span>       
+              
+              <span className="summary-room-cutomize"  rid={e.roomId}
+                  onClick={(ele) => {
+                    setroomids(e.roomId);
+                    handleOpen();
+                    handleBoxSize();
+                    
+                  }}>Customize</span>       
               <img className="summary-room-cutomize-icon" src={process.env.PUBLIC_URL+"/assets/icon/Vector.png"} alt="arrow"></img>
-              </Link>
+            
               <span className="summary-room-money">₹ 150</span>
             </div>
           
@@ -57,45 +77,8 @@ export default function Summary() {
      }
        </div>
 </div>
-      {/* <div className="summary-rooms-cont">
-        <div className="summary-rooms-inner-cont">
-          <div className="summary-room-details">
-            <span className="summary-room-name">Living Room</span>
-            <span className="summary-room-cutomize">Customize</span>
-            <span className="summary-room-money">₹ 150</span>
-          </div>
-          <div className="summary-room-details">
-            <span className="summary-room-name">Dinving Room</span>
-            <span className="summary-room-cutomize">Customize</span>
-            <span className="summary-room-money">₹ 150</span>
-          </div>
-          <div className="summary-room-details">
-            <span className="summary-room-name">Living Room</span>
-            <span className="summary-room-cutomize">Customize</span>
-            <span className="summary-room-money">₹ 150</span>
-          </div>
-          <div className="summary-room-details">
-            <span className="summary-room-name">Living Room</span>
-            <span className="summary-room-cutomize">Customize</span>
-            <span className="summary-room-money">₹ 150</span>
-          </div>
-          <div className="summary-room-details">
-            <span className="summary-room-name">Dinving Room</span>
-            <span className="summary-room-cutomize">Customize</span>
-            <span className="summary-room-money">₹ 150</span>
-          </div>
-          <div className="summary-room-details">
-            <span className="summary-room-name">Living Room</span>
-            <span className="summary-room-cutomize">Customize</span>
-            <span className="summary-room-money">₹ 150</span>
-          </div>
-          <div className="summary-room-details">
-            <span className="summary-room-name">Dinving Room</span>
-            <span className="summary-room-cutomize">Customize</span>
-            <span className="summary-room-money">₹ 150</span>
-          </div>
-        </div>
-      </div> */}
+<RoomHome open={open} handleBoxSize={handleBoxSize} boxSize={boxSize} handleClose={handleClose} roomids={roomids} name={"Edit"}/>
+
 
       <div className="summary-room-frequantBuy-conyainer">
         <div className="summary-room-frequantBuy-tit">

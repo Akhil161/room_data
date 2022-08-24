@@ -7,7 +7,7 @@ import Fade from "@mui/material/Fade";
 import RoomDetails from "./RoomDetails";
 import "./RoomHome.css";
 export default function RoomHome(props) {
-  let {open,handleBoxSize,boxSize,handleClose,roomids} = props;
+  let {open,handleBoxSize,boxSize,handleClose,roomids,name} = props;
   let dataState = useSelector((state) => {
     return state.sar;
   });
@@ -91,9 +91,9 @@ export default function RoomHome(props) {
               borderRadius: "29px 29px 0px 0px",
             }}
           >
-            <div className="add-room-title-container">Add Room Details</div>
+            <div className="add-room-title-container">{name} Room Details</div>
             <div className="add-room-subtitle-conainer">
-              Add the rooms, and the switchboards in it & the appliances they
+              {name} the rooms, and the switchboards in it & the appliances they
               control
             </div>
             <div className="room-name">
