@@ -50,7 +50,7 @@
   }
   .SwitchBoard-appliance-name-text {
     position: absolute;
-    width: 139px;
+    width: fit-content;
     height: 23px;
     left: 20%;
     top: 27%;
