@@ -8,6 +8,7 @@
     left: 5%;
     margin-top: 2%;
     overflow-x: auto;
+    overflow-y: hidden;
     height: 45px;
     max-width: 90%;
   }
