@@ -69,9 +69,6 @@ export default function RoomHome(props) {
       return "Other"
     }
     const os1 = getMobileOS();
-    console.log(os)
-    console.log(os)
-    console.log(os)
     setos(os1);
   },[])
   

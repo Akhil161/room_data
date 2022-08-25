@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, {  useState,useEffect } from 'react'
 import { useSelector } from "react-redux";
 import RoomHome from './RoomHome';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,8 @@ export default function RoomDisplay(props) {
   let [boxSize, setBoxSize] = useState(false);
   let [roomids, setroomids] = useState(100);
   let [name,setName] =useState("Add");
+  let [os,setos]=useState("");
+
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -19,6 +21,21 @@ export default function RoomDisplay(props) {
     let dataState = useSelector((state) => {
         return state.sar; 
       });    
+      useEffect(()=>{
+        const getMobileOS = () => {
+          const ua = navigator.userAgent
+          if (/android/i.test(ua)) {
+            return "Android"
+          }
+          else if (/iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1))
+          {
+            return "iOS";
+          }
+          return "Other"
+        }
+        const os1 = getMobileOS();
+        setos(os1);
+      },[])
   return (
     <>
     <div className="addRoom-title-cont">
@@ -45,7 +62,7 @@ export default function RoomDisplay(props) {
         </div>
       </div>
 
-      <div className="add-room-details-container">
+      <div className="add-room-details-container" style={{minHeight:`${os==="iOS"?"54vh":"58vh"}`}}>
      {dataState.length !== 0
           ? dataState.map((e, i) => {
               return (
