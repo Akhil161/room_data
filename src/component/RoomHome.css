@@ -23,7 +23,7 @@
     width: 100%;
     overflow: auto;
     scrollbar-width: 0;
-    min-height: 66vh;
+    min-height: 58vh;
   }
   .addRoom-room-cont2{
     position: relative;

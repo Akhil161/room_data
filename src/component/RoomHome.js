@@ -83,7 +83,7 @@ export default function RoomHome(props) {
               width: "99.99%",
               height: "82vh",
               left: "0px",
-              top: `${boxSize === true ? "17vh" : "22vh"}`,
+              top: `${boxSize === true ? "16vh" : "22vh"}`,
               outline: "none",
 
               background: "#FFFFFF",
