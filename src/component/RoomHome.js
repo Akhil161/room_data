@@ -8,6 +8,7 @@ import RoomDetails from "./RoomDetails";
 import "./RoomHome.css";
 export default function RoomHome(props) {
   let {open,handleBoxSize,boxSize,handleClose,roomids,name} = props;
+  let [os,setos]=useState("");
   let dataState = useSelector((state) => {
     return state.sar;
   });
@@ -55,6 +56,24 @@ export default function RoomHome(props) {
       setdata(newData1);
     }
   },[roomids,open,dataState])
+  useEffect(()=>{
+    const getMobileOS = () => {
+      const ua = navigator.userAgent
+      if (/android/i.test(ua)) {
+        return "Android"
+      }
+      else if (/iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1))
+      {
+        return "iOS";
+      }
+      return "Other"
+    }
+    const os1 = getMobileOS();
+    console.log(os)
+    console.log(os)
+    console.log(os)
+    setos(os1);
+  },[])
   
   return (
     <div className="addRoom-d-c">
@@ -83,7 +102,7 @@ export default function RoomHome(props) {
               width: "99.99%",
               height: "82vh",
               left: "0px",
-              top: `${boxSize === true ? "16vh" : "22vh"}`,
+              top: `${(os==="iOS")?(boxSize === true ? "12vh" : "17vh"):(boxSize === true ? "16vh" : "22vh")}`,
               outline: "none",
 
               background: "#FFFFFF",

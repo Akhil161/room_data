@@ -12,7 +12,6 @@ export default function Getstarted() {
             <img src={process.env.PUBLIC_URL+'assets/img/frontImg.png'} alt="main img"></img>
         </div>
     </div>
-    
 
 <Slider/>
 <Link className="link" to="login">
