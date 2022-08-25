@@ -15,7 +15,7 @@
   .SwitchBoard-container {
     position: relative;
     width: 100%;
-    margin-top: 4%;
+    /* margin-top: 2%; */
     scrollbar-width: none;
 
     left: 0;

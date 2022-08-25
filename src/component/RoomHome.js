@@ -79,11 +79,11 @@ export default function RoomHome(props) {
           <Box
             sx={{
               position: "relative",
-
+              
               width: "99.99%",
-              height: "80vh",
+              height: "82vh",
               left: "0px",
-              top: `${boxSize === true ? "19%" : "25%"}`,
+              top: `${boxSize === true ? "17vh" : "22vh"}`,
               outline: "none",
 
               background: "#FFFFFF",
