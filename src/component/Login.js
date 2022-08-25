@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TopHeader from "./TopHeader";
 import "./Login.css";
 
 
@@ -7,29 +8,8 @@ import "./Login.css";
 export default function Login() {
   return (
     <div>
-        <div className="addRoom-title-cont">
-        <div className="addRoom-title-inner">
-          <span
-            style={{
-
-              fontWeight: "400",
-              fontSize: "36px",
-              LineHeight: "49.18px",
-            }}
-          >
-            Give us your
-          </span>
-          <br />
-          <span
-            style={{
-              fontWeight: "700",
-              fontSize: "36px",
-              LineHeight: "49.18px",
-            }}
-          >basic details
-          </span>
-        </div>
-      </div>
+       
+      <TopHeader title={"Give us your"} subtitle={"basic details"}/>
 
       <div className="input-group mb-3 mt-3 input-w">
         <span className="input-group-text icon-user" id="basic-addon1">

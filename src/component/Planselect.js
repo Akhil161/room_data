@@ -1,36 +1,16 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import "./Planselect.css";
+import TopHeader from "./TopHeader";
 import {data} from "./Object"
 
 export default function Planselect() {
   return (
     
     <div>
-      <div className="addRoom-title-cont">
-        <div className="addRoom-title-inner">
-          <span
-            style={{
+      
+            <TopHeader title={"Select your"} subtitle={"subscription plan"}/>
 
-              fontWeight: "400",
-              fontSize: "36px",
-              LineHeight: "49.18px",
-            }}
-          >
-            Select your
-
-          </span>
-          <br />
-          <span
-            style={{
-              fontWeight: "700",
-              fontSize: "36px",
-              LineHeight: "49.18px",
-            }}
-          >basic details
-          </span>
-        </div>
-      </div>
 
     {
         data.length!==0?

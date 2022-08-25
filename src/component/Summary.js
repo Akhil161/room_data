@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import "./Summary.css";
 import {plan} from './Paymentobj'
 import { useSelector } from "react-redux";
+import TopHeader from "./TopHeader";
 import RoomHome from "./RoomHome";
 
 export default function Summary() {
@@ -23,29 +24,8 @@ export default function Summary() {
   console.log(dataState);
   return (
     <>
-      <div className="summary-title-cont">
-        <div className="summary-title-inner">
-          <span
-            style={{
-              fontWeight: "400",
-              fontSize: "36px",
-              LineHeight: "49.18px",
-            }}
-          >
-            Your Smart home is
-          </span>
-          <br />
-          <span
-            style={{
-              fontWeight: "700",
-              fontSize: "36px",
-              LineHeight: "49.18px",
-            }}
-          >
-            one click away!
-          </span>
-        </div>
-      </div>
+      
+      <TopHeader title={"Your Smart home is"} subtitle={"one click away!"}/>
 
       <div className="summary-rooms-cont">
       <div className="summary-rooms-inner-cont">

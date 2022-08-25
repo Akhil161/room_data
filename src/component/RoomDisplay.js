@@ -44,6 +44,7 @@ export default function RoomDisplay(props) {
           </span>
         </div>
       </div>
+
       <div className="add-room-details-container">
      {dataState.length !== 0
           ? dataState.map((e, i) => {
