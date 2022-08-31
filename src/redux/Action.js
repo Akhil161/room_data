@@ -1,7 +1,7 @@
 
 
 export const saveData = (data) => {
- console.log(data)
+ 
     return {
              type:"save",
              payload:data[0],
@@ -13,3 +13,11 @@ export const saveData = (data) => {
                 payload: data[0],
             }
     }
+
+    export const loadData = (data) => {
+       
+        return {
+                 type:"load",
+                 payload:data,
+             }
+     }

@@ -1,5 +1,5 @@
 import { Popover } from "@mui/material";
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import "./RoomDetails.css";
 import SwitchBoard from "./SwitchBoard";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,14 +7,10 @@ import { saveData,updateData } from "../redux/Action";
 
 export default function RoomDetails(props) {
   let { handleBoxSize, roomids ,data,setdata} = props;
-  let [selectTab, setSelectTab] = useState("Living Room");
-  let [selectTab1, setSelectTab1] = useState(data[0].roomname);
   const [addSwitch, setAddSwitch] = useState(false);
-  
   let reduxData = useSelector((state) => {
     return state.sar;
   });
- 
   let i;
   if (roomids === 100) {
     i = reduxData.length;
@@ -28,7 +24,7 @@ export default function RoomDetails(props) {
     
 let roomNamme=[...data]
     if (roomNamme[0]) {
-      console.log(roomNamme);
+    
       roomNamme[0].switchBoards = [
         ...roomNamme[0].switchBoards,
         {
@@ -109,13 +105,12 @@ let roomNamme=[...data]
                     <button
                       onClick={() => {
                         let btn = document.querySelectorAll(".room-name-btn");
-                        console.log(btn);
+                      
                         btn.forEach((ele) => {
                           ele.classList.remove("background-blue");
                         });
                         btn[i].classList.add("background-blue");
-                        roomids!==100?setSelectTab1(e.name):setSelectTab(e.name)
-                        
+                        data[0].roomname=e.name
                         
                       }}
                       className={`room-name-btn ${
@@ -189,7 +184,6 @@ let roomNamme=[...data]
                       SwitchBoard={i}
                       data={data}
                       setData={setdata}
-                      // selectTab={selectTab}
                     />
                   </>
                 );
@@ -236,21 +230,13 @@ let roomNamme=[...data]
           className="addroom-bottom-container"
           onClick={(e) => {
             e.preventDefault();
-            console.log(data,"245");
             let newData = data;
-            console.log(selectTab, "359");
-          
             newData[0].roomId = i;
-            console.log("sandeep", newData);
-            console.log(selectTab1);
-            // newData[0].roomname=selectTab1;
             props.onClosee();
             if(roomids===100){
-              newData[0].roomname=selectTab;
             dispatch(saveData(newData));
             }
             else{
-              newData[0].roomname=selectTab1;
               dispatch(updateData(newData));
             }
           }}

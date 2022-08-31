@@ -1,7 +1,8 @@
 import React, {  useState,useEffect } from 'react'
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch} from "react-redux";
 import RoomHome from './RoomHome';
 import { Link } from 'react-router-dom';
+import { loadData } from "../redux/Action";
 
 
 export default function RoomDisplay(props) {
@@ -10,6 +11,7 @@ export default function RoomDisplay(props) {
   let [roomids, setroomids] = useState(100);
   let [name,setName] =useState("Add");
   let [os,setos]=useState("");
+  let [items,setItem]=useState([]);
 
 
   const handleOpen = () => setOpen(true);
@@ -21,7 +23,13 @@ export default function RoomDisplay(props) {
     let dataState = useSelector((state) => {
         return state.sar; 
       });    
+      // dataState.flat(Infinity)
+      let dispatch = useDispatch();
+
+     
+      
       useEffect(()=>{
+        
         const getMobileOS = () => {
           const ua = navigator.userAgent
           if (/android/i.test(ua)) {
@@ -36,6 +44,32 @@ export default function RoomDisplay(props) {
         const os1 = getMobileOS();
         setos(os1);
       },[])
+      useEffect(()=>{
+        
+        if(dataState.length===0){
+          let item=JSON.parse(localStorage.getItem('data'));
+
+      
+          if(item!==null){
+          dispatch(loadData(item));}
+          else{
+            return
+          }
+        }
+        if(dataState.length!==0){
+
+           localStorage.setItem('data',JSON.stringify(dataState));
+        }
+           
+      },[dataState])
+      useEffect(()=>{
+        let item=JSON.parse(localStorage.getItem('data'));
+        if(item!==null){
+         setItem(item)
+        }
+      
+      },[os,dataState])
+     
   return (
     <>
     <div className="addRoom-title-cont">
@@ -63,10 +97,11 @@ export default function RoomDisplay(props) {
       </div>
 
       <div className="add-room-details-container" style={{minHeight:`${os==="iOS"?"54vh":"58vh"}`}}>
-     {dataState.length !== 0
-          ? dataState.map((e, i) => {
+     {items.length !== 0
+          ?items.map((e, i) => {
+            
               return (
-                <div
+                <div key={i}
                   className="addRoom-room-detail"
                   rid={e.roomId}
                   onClick={(ele) => {
@@ -115,7 +150,7 @@ export default function RoomDisplay(props) {
           {/* model */}
 
           <RoomHome open={open} handleBoxSize={handleBoxSize} boxSize={boxSize} handleClose={handleClose} roomids={roomids} name={name}/>
-          {dataState.length > 0 ? (
+          {items.length > 0 ? (
         <div className="addroom-bottom-container">
           <Link to="summary">
             <div className="addroom-bottom-upper1-cont">
