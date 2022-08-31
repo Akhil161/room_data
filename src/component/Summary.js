@@ -167,7 +167,9 @@ export default function Summary() {
             <div className="summary-roam-payment-page-payment-container-rs">₹ 2850</div>
             <div className="summary-roam-payment-page-payment-container-details">View Detailed Bill</div>
           </div>
-          <div className="summary-roam-payment-page-payment-container-btn">Proceed to Pay</div>
+          <div className="summary-roam-payment-page-payment-container-btn" onClick={()=>{
+            localStorage.removeItem('data');
+          }}>Proceed to Pay</div>
         </div>
     </>
   );
