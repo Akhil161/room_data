@@ -167,7 +167,7 @@ let roomNamme=[...data]
             ? data[0].switchBoards.map((e, i) => {
                 return (
                   <>
-                    <div className="SwitchBoard-title-container">
+                    <div className="SwitchBoard-title-container" key={i}>
                       SwitchBoard {i + 1}{" "}
                       <span
                         className="roomDetails-SwitchBoard-delete-btn"

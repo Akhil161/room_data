@@ -1,9 +1,11 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import "./Summary.css";
 import {plan} from './Paymentobj'
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
 import TopHeader from "./TopHeader";
 import RoomHome from "./RoomHome";
+import { loadData } from "../redux/Action";
+
 
 export default function Summary() {
   
@@ -11,17 +13,44 @@ export default function Summary() {
   let [open, setOpen] = useState(false);
   let [boxSize, setBoxSize] = useState(false);
   let [roomids, setroomids] = useState(100);
-
+  let [items,setItem]=useState([]);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleBoxSize = () => setBoxSize(true);
 
+  let dispatch = useDispatch();
 
 
   let dataState = useSelector((state) => {
     return state.sar;
   });
   console.log(dataState);
+  useEffect(()=>{
+    if(dataState.length===0){
+
+    let item=JSON.parse(localStorage.getItem('data'));
+
+      
+    if(item!==null){
+    dispatch(loadData(item));}
+    else{
+      return
+    }
+  }
+    if(dataState.length!==0){
+
+      localStorage.setItem('data',JSON.stringify(dataState));
+   }
+      
+ },[dataState])
+ useEffect(()=>{
+   let item=JSON.parse(localStorage.getItem('data'));
+   if(item!==null){
+    setItem(item)
+   }
+ 
+ },[roomids])
+  
   return (
     <>
       
@@ -30,12 +59,12 @@ export default function Summary() {
       <div className="summary-rooms-cont">
       <div className="summary-rooms-inner-cont">
      {
-      dataState.length!==0?
-      dataState.map((e)=>{
+      items.length!==0?
+      items.map((e,i)=>{
         return(
           
           
-            <div className="summary-room-details">
+            <div className="summary-room-details" key={i}>
               <span className="summary-room-name">{e.roomname}</span>
               
               <span className="summary-room-cutomize"  rid={e.roomId}
@@ -130,12 +159,12 @@ export default function Summary() {
           </div>
        
           <div className="summary-room-bill-details-container-line-cont">
-          <div class="line"></div>
+          <div className="line"></div>
           <div className="summary-room-bill-details-container-line-cont-details"><span className="inner">Discount</span><span className="inner1" style={{color:"#189E71"}}>- ₹ 100</span></div>
           
-          <div class="line"></div>
+          <div className="line"></div>
           <div className="summary-room-bill-details-container-line-cont-details"><span className="inner">Taxes</span><span className="inner1">₹ 100</span></div>
-          <div class="line"></div>
+          <div className="line"></div>
           <div className="summary-room-bill-details-container-line-cont-details"><span className="pay-to-inner">To pay</span><span className="inner1">₹ 2850</span></div>
         </div>
         </div>
